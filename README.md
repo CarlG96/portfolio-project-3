@@ -29,3 +29,16 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 
 -----
 Happy coding!
+
+# Space Traveller
+
+## Purpose of Space Traveller
+## Features
+## Future Features
+## Prototype and Flowcharts
+## Technology
+## Testing
+## Test Cases
+## Bugs
+## Deployment
+## Credits
