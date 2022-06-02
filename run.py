@@ -1,4 +1,5 @@
 def introduction():
+    """Introduces the user to the game"""
     print('Welcome to Star Traveller!')
     print('You are a captain of the Star Republic Navy.')
     print('You have been tasked with delivering a superweapon from Sector A to Sector E.')
@@ -7,15 +8,17 @@ def introduction():
     print('\n\n\n')
 
 
-def get_name():
-    name = (input('What is your name, captain? ')).strip()
+def get_name(name_in_question):
+    """Gets the user's name for their captain and returns the name"""
+    name = ((input(f'What is your {name_in_question}, captain? ')).strip()).capitalize()
     return name
 
 
 def main():
     """Main function"""
     introduction()
-    print(f'Hello, {get_name()}.')
+    print(f'Hello, {get_name("name")}.')
+    print(f'Your ship is called {get_name("ship name")}.')
     # print('Hello World!')
     # print('Please enter your name.')
     # print('Name should be between 5 and 15 characters long.')
