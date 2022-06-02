@@ -14,19 +14,37 @@ def get_name(name_in_question):
     return name
 
 
+def decide_on_items():
+    """User chooses 3 of 5 items. Function returns a list of these three items."""
+    potential_cargo_items = ['Temporary Force Shield', 'Anti-Gravity Device', 'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
+    cargo = []
+    j = 1
+    while j < 4:
+        print('Here are the list of items: ')
+        i = 1
+        for potential_cargo_item in potential_cargo_items:
+            print(f'{i}) {potential_cargo_item}')
+            i += 1
+        cargo_choice = int(input('Choose which item you want by typing in the number: ')) - 1
+        cargo.append(potential_cargo_items[cargo_choice])
+        potential_cargo_items.remove(potential_cargo_items[cargo_choice])
+        j += 1
+    print('You have these items: ')
+    k = 1
+    for carg in cargo:
+        print(f'{k}) {carg}')
+        k += 1
+    return cargo
+
+
 def main():
     """Main function"""
     introduction()
     print(f'Hello, {get_name("name")}.')
     print(f'Your ship is called {get_name("ship name")}.')
-    # print('Hello World!')
-    # print('Please enter your name.')
-    # print('Name should be between 5 and 15 characters long.')
-    # print("Name can't include numbers.")
-    # name_prototype = input('Input your name:\n')
-    # name = name_prototype.strip()
-    # print(name)
-    # validate_name(name)
+    
+    cargo_items = decide_on_items()
+    print(cargo_items)
     
 
 def validate_name(name):
