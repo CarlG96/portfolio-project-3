@@ -33,6 +33,7 @@ Happy coding!
 # Space Traveller
 
 ## Purpose of Space Traveller
+Space Traveller is a text-based adventure game in a science fiction setting. The game receives input from the user and through this the user navigates through a number of scenarios, either passing them and moving on to the next one or failing. There are five scenarios the player must navigate through by inputting commands and completing all five of them will result in the user completing the game. The user will choose the name of their captain, their spaceship and will decide upon 3 of 5 'cargo' to hold on their ship to potentially use throughout the game.
 ## Features
 ## Future Features
 ## Prototype and Flowcharts
