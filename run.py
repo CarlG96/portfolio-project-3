@@ -1,3 +1,5 @@
+import random
+
 def introduction():
     """Introduces the user to the game"""
     print('Welcome to Star Traveller!')
@@ -61,12 +63,17 @@ class Player:
         """Takes a factor and returns a True or
         False as to whether the ship survived the
         risky maneuver taken"""
+        floating_num = random.random()
+        if floating_num >= factor:
+            return True
+        else:
+            return False
 
         
 
 def main():
     """Main function"""
-    # introduction()
+    introduction()
     player_name = get_name("name")
     print(f'Hello, {player_name}.')
 
