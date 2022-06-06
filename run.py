@@ -45,6 +45,9 @@ class Player:
         self.ship_name = ship_name
         self.cargo = cargo
         self.fuel = 3
+
+    def use_fuel(self):
+        self.fuel -= 1
         
 
 def main():
@@ -60,10 +63,7 @@ def main():
     print(cargo_items)
     
     main_player = Player(player_name, player_ship_name, cargo_items)
-    print(main_player.fuel)
-    print(main_player.name)
-    print(main_player.ship_name)
-    print(main_player.cargo)
+    
 
 def validate_name(name):
     [str(character) for character in name]
