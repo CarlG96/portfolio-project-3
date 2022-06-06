@@ -37,15 +37,33 @@ def decide_on_items():
     return cargo
 
 
+class Player:
+    """Creates an instance of the player 
+    from what the player has inputted"""
+    def __init__(self, name, ship_name, cargo):
+        self.name = name
+        self.ship_name = ship_name
+        self.cargo = cargo
+        self.fuel = 3
+        
+
 def main():
     """Main function"""
-    introduction()
-    print(f'Hello, {get_name("name")}.')
-    print(f'Your ship is called {get_name("ship name")}.')
+    # introduction()
+    player_name = get_name("name")
+    print(f'Hello, {player_name}.')
+
+    player_ship_name = get_name("ship name")
+    print(f'Your ship is called {player_ship_name}.')
     
     cargo_items = decide_on_items()
     print(cargo_items)
     
+    main_player = Player(player_name, player_ship_name, cargo_items)
+    print(main_player.fuel)
+    print(main_player.name)
+    print(main_player.ship_name)
+    print(main_player.cargo)
 
 def validate_name(name):
     [str(character) for character in name]
