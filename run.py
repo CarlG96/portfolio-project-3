@@ -77,7 +77,7 @@ def scenario_intro(number):
         print('Upon arrival in Sector E you see your destination appear after typing in your encrypted password. The end of your journey seems so close now. But out of nowhere the capital ship, the Robo-Annihilator, of the Robo-Empire appears and starts to pull you in with its tractor beam. What do you do?')
 
 
-def scenario_one(player_object, scenario_number, risk_factor, winning_cargo):
+def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
     """Function for calling the first scenario 
     for the player."""
     scenario_intro(int(scenario_number))
@@ -85,22 +85,20 @@ def scenario_one(player_object, scenario_number, risk_factor, winning_cargo):
     number_choice = int(input('Please choose an option using the numbers provided: '))
     if number_choice == len(player_object.cargo) + 1:
         if player_object.use_fuel():
-            #move on to next scenario
-            pass
+            scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO) # might have int problems
         else:
             game_over(player_object)
     elif number_choice == len(player_object.cargo) + 2:
-        if player_object.take_chance(0.1):
-            #move on to next scenario
-            pass
+        if player_object.take_chance(risk_factor):
+            scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO) #might have int problems
         else:
             game_over(player_object)
     elif number_choice <= len(player_object.cargo):
-        if player_object.cargo[number_choice - 1] == 'Temporary Force Shield':
+        if player_object.cargo[number_choice - 1] == WINNING_CARGO[int(scenario_number)-1]:
             pass #remove temporary forcefield
         else:
             game_over(player_object)
-    # Add if else statement with pass or fail causing call for scenario_two or game_over
+    
 
 class Player:
     """Creates an instance of the player 
@@ -152,7 +150,8 @@ def main():
     cargo_items = decide_on_items()
     
     main_player = Player(player_name, player_ship_name, cargo_items)
-    scenario_one(main_player, 1, 0.1, 'Temporary Force Shield')
+    WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
+    scenario_one(main_player, 1, 0.1, WINNING_CARGO)
     
 
 def validate_name(name):
