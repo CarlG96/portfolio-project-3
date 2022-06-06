@@ -64,53 +64,43 @@ def display_options(player_object):
     print(f'{i}) Perform a risky maneuver.')
 
 
-def scenario_one(player_object):
+def scenario_intro(number):
+    if number == 1:
+        print('\n\nAs you go to leave Sector A. A large asteroid storm appears! You are about to be caught in the middle of it. What do you do?')
+    elif number == 2:
+        print('As you enter Sector B, your ship starts to be pulled in by a supermassive black hole! What do you do?')
+    elif number == 3:
+        print('About halfway through Sector C. A garbled alien transmission comes through from a spaceship on your radar. You have no idea what they want, but their heat signatures suggest they are powering up their weapons. What do you do?')
+    elif number == 4:
+        print('As you enter Sector D, you notice a blockade of Robo-Empire ships. There`s no way you could fight them all. What do you do?')
+    elif number == 5:
+        print('Upon arrival in Sector E you see your destination appear after typing in your encrypted password. The end of your journey seems so close now. But out of nowhere the capital ship, the Robo-Annihilator, of the Robo-Empire appears and starts to pull you in with its tractor beam. What do you do?')
+
+
+def scenario_one(player_object, scenario_number, risk_factor, winning_cargo):
     """Function for calling the first scenario 
     for the player."""
-    print('\n\nAs you go to leave Sector A. A large asteroid storm appears! You are about to be caught in the middle of it. What do you do?')
+    scenario_intro(int(scenario_number))
     display_options(player_object)
     number_choice = int(input('Please choose an option using the numbers provided: '))
     if number_choice == len(player_object.cargo) + 1:
-        player_object.use_fuel()
+        if player_object.use_fuel():
+            #move on to next scenario
+            pass
+        else:
+            game_over(player_object)
     elif number_choice == len(player_object.cargo) + 2:
-        player_object.take_chance(0.1)
+        if player_object.take_chance(0.1):
+            #move on to next scenario
+            pass
+        else:
+            game_over(player_object)
     elif number_choice <= len(player_object.cargo):
         if player_object.cargo[number_choice - 1] == 'Temporary Force Shield':
-            print('You are winner')
             pass #remove temporary forcefield
         else:
             game_over(player_object)
     # Add if else statement with pass or fail causing call for scenario_two or game_over
-
-def scenario_two(player_object):
-    """Function for calling the second scenario 
-    for the player."""
-    print('As you enter Sector B, your ship starts to be pulled in by a supermassive black hole! What do you do?')
-    # Add call for displaying options function
-    # Add if else statement with pass or fail causing call for scenario_three or game_over
-
-
-def scenario_three(player_object):
-    """Function for calling the third scenario 
-    for the player."""
-    print('About halfway through Sector C. A garbled alien transmission comes through from a spaceship on your radar. You have no idea what they want, but their heat signatures suggest they are powering up their weapons. What do you do?')
-     # Add call for displaying options function
-     # Add if else statement with pass or fail causing call for scenario_four or game_over
-
-
-def scenario_four(player_object):
-    """Function for calling the fourth scenario 
-    for the player."""
-    print('As you enter Sector D, you notice a blockade of Robo-Empire ships. There’s no way you could fight them all. What do you do?')
-     # Add call for displaying options function
-     # Add if else statement with pass or fail causing call for scenario_five or game_over
-
-def scenario_five(player_object):
-    """Function for calling the fifth scenario 
-    for the player."""
-    print('Upon arrival in Sector E you see your destination appear after typing in your encrypted password. The end of your journey seems so close now. But out of nowhere the capital ship, the Robo-Annihilator, of the Robo-Empire appears and starts to pull you in with its tractor beam. What do you do?')
-    # Add call for displaying options function
-    # Add if else statement with pass or fail causing call for victory or game_over
 
 class Player:
     """Creates an instance of the player 
@@ -125,6 +115,10 @@ class Player:
         """Removes one fuel from the 
         ship in order to get past an objective"""
         self.fuel -= 1
+        if self.fuel >= 0:
+            return True
+        else: 
+            return False
 
     def use_cargo(self, cargo_item):
         """Uses a cargo item and removes
@@ -158,7 +152,7 @@ def main():
     cargo_items = decide_on_items()
     
     main_player = Player(player_name, player_ship_name, cargo_items)
-    scenario_one(main_player)
+    scenario_one(main_player, 1, 0.1, 'Temporary Force Shield')
     
 
 def validate_name(name):
