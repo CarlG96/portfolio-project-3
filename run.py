@@ -67,9 +67,19 @@ def display_options(player_object):
 def scenario_one(player_object):
     """Function for calling the first scenario 
     for the player."""
-    print('As you go to leave Sector A. A large asteroid storm appears! You are about to be caught in the middle of it. What do you do?')
-    print(player_object.name)
-    # Add call for displaying options function
+    print('\n\nAs you go to leave Sector A. A large asteroid storm appears! You are about to be caught in the middle of it. What do you do?')
+    display_options(player_object)
+    number_choice = int(input('Please choose an option using the numbers provided: '))
+    if number_choice == len(player_object.cargo) + 1:
+        player_object.use_fuel()
+    elif number_choice == len(player_object.cargo) + 2:
+        player_object.take_chance(0.1)
+    elif number_choice <= len(player_object.cargo):
+        if player_object.cargo[number_choice - 1] == 'Temporary Force Shield':
+            print('You are winner')
+            pass #remove temporary forcefield
+        else:
+            game_over(player_object)
     # Add if else statement with pass or fail causing call for scenario_two or game_over
 
 def scenario_two(player_object):
@@ -128,8 +138,10 @@ class Player:
         risky maneuver taken"""
         floating_num = random.random()
         if floating_num >= factor:
+            print(True)
             return True
         else:
+            print(False)
             return False
 
         
@@ -137,17 +149,16 @@ class Player:
 def main():
     """Main function"""
     #introduction()
-    #player_name = get_name("name")
-    #print(f'Hello, {player_name}.')
+    player_name = get_name("name")
+    print(f'Hello, {player_name}.')
 
-    #player_ship_name = get_name("ship name")
-    #print(f'Your ship is called {player_ship_name}.')
+    player_ship_name = get_name("ship name")
+    print(f'Your ship is called {player_ship_name}.')
     
     cargo_items = decide_on_items()
-    print(cargo_items)
     
-    #main_player = Player(player_name, player_ship_name, cargo_items)
-    #scenario_one(main_player)
+    main_player = Player(player_name, player_ship_name, cargo_items)
+    scenario_one(main_player)
     
 
 def validate_name(name):
