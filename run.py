@@ -47,7 +47,21 @@ class Player:
         self.fuel = 3
 
     def use_fuel(self):
+        """Removes one fuel from the 
+        ship in order to get past an objective"""
         self.fuel -= 1
+
+    def use_cargo(self, cargo_item):
+        """Uses a cargo item and removes
+        it from the ship's cargo"""
+        self.cargo.remove(cargo_item) 
+        # Need checking for this function
+
+    def take_chance(self, factor):
+        """Takes a factor and returns a True or
+        False as to whether the ship survived the
+        risky maneuver taken"""
+
         
 
 def main():
