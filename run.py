@@ -39,6 +39,37 @@ def decide_on_items():
     return cargo
 
 
+def scenario_one(player_object):
+    """Function for calling the first scenario 
+    for the player."""
+    print('As you go to leave Sector A. A large asteroid storm appears! You are about to be caught in the middle of it. What do you do?')
+
+
+def scenario_two(player_object):
+    """Function for calling the second scenario 
+    for the player."""
+    print('As you enter Sector B, your ship starts to be pulled in by a supermassive black hole! What do you do?')
+    
+
+
+def scenario_three(player_object):
+    """Function for calling the third scenario 
+    for the player."""
+    print('About halfway through Sector C. A garbled alien transmission comes through from a spaceship on your radar. You have no idea what they want, but their heat signatures suggest they are powering up their weapons. What do you do?')
+
+
+
+def scenario_four(player_object):
+    """Function for calling the fourth scenario 
+    for the player."""
+    print('As you enter Sector D, you notice a blockade of Robo-Empire ships. There’s no way you could fight them all. What do you do?')
+
+def scenario_five(player_object):
+    """Function for calling the fifth scenario 
+    for the player."""
+    print('Upon arrival in Sector E you see your destination appear after typing in your encrypted password. The end of your journey seems so close now. But out of nowhere the capital ship, the Robo-Annihilator, of the Robo-Empire appears and starts to pull you in with its tractor beam. What do you do?')
+
+
 class Player:
     """Creates an instance of the player 
     from what the player has inputted"""
@@ -56,7 +87,7 @@ class Player:
     def use_cargo(self, cargo_item):
         """Uses a cargo item and removes
         it from the ship's cargo"""
-        self.cargo.remove(cargo_item) 
+        self.cargo.remove(self.cargo[int(cargo_item)-1]) 
         # Need checking for this function
 
     def take_chance(self, factor):
