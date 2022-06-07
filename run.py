@@ -37,11 +37,8 @@ def decide_on_items():
         k += 1
     return cargo
 
-def game_over(player_object):
-    """Function which is called when the player loses the
-    game. Allows them to quit or play again."""
-    print(f'\n\nCaptain {player_object.name} has died.')
-    print('Would you like to try again?')
+def replay():
+    print('Would you like to play again?')
     choice = input('Type Y for yes and N for no: ').upper()
     if choice == 'Y':
         main()
@@ -49,12 +46,22 @@ def game_over(player_object):
         pass
 
 
+def game_over(player_object):
+    """Function which is called when the player loses the
+    game. Allows them to quit or play again."""
+    print(f'\n\nCaptain {player_object.name} has died.')
+    #Add function to record player's death to Google Sheets
+    replay()
+
+
 def victory(player_object):
     """Function which is called when the player wins the game.
     Allows them to quit or play again and will eventually add to a 
     board in a Google Sheet."""
     print(f'\n\nWell done Captain {player_object.name}. You have saved the Star Republic!')
-    main()
+    #Add function to record player's victory to Google Sheets
+    replay()
+   
 
 
 def display_options(player_object):
@@ -92,12 +99,12 @@ def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
     number_choice = int(input('Please choose an option using the numbers provided: '))
     if number_choice == len(player_object.cargo) + 1:
         if player_object.use_fuel():
-            scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO) # might have int problems
+            scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO) 
         else:
             game_over(player_object)
     elif number_choice == len(player_object.cargo) + 2:
         if player_object.take_chance(risk_factor):
-            scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO) #might have int problems
+            scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO) 
         else:
             game_over(player_object)
     elif number_choice <= len(player_object.cargo):
