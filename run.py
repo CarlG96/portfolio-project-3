@@ -13,6 +13,7 @@ def introduction():
 def get_name(name_in_question):
     """Gets the user's name for their captain and returns the name"""
     name = ((input(f'What is your {name_in_question}, captain? ')).strip()).capitalize()
+    #validate name function, name must be between 5 and 15 characters and letters
     return name
 
 
@@ -26,6 +27,7 @@ def decide_on_items():
         for potential_cargo_item, i in zip(potential_cargo_items, range(len(potential_cargo_items))):
             print(f'{i + 1}) {potential_cargo_item}')
         cargo_choice = int(input('Choose which item you want by typing in the number: ')) - 1
+        #Need validate function for both ValueError and IndexError
         cargo.append(potential_cargo_items[cargo_choice])
         potential_cargo_items.remove(potential_cargo_items[cargo_choice])
         j += 1
@@ -40,6 +42,7 @@ def decide_on_items():
 def replay():
     print('Would you like to play again?')
     choice = input('Type Y for yes and N for no: ').upper()
+    #Need validate function to make sure value is Y or N
     if choice == 'Y':
         main()
     elif choice == 'N':
@@ -97,6 +100,7 @@ def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
     scenario_intro(int(scenario_number), player_object)
     display_options(player_object)
     number_choice = int(input('Please choose an option using the numbers provided: '))
+    #validate function that checks for valueerror and index error 
     if number_choice == len(player_object.cargo) + 1:
         if player_object.use_fuel():
             scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO) 
@@ -165,11 +169,6 @@ def main():
     main_player = Player(player_name, player_ship_name, cargo_items)
     WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
     scenario_one(main_player, int(1), float(0.1), WINNING_CARGO)
-    
-
-def validate_name(name):
-    [str(character) for character in name]
-    print(f'{name}')
     
 
 main()
