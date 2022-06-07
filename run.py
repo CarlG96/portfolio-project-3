@@ -49,7 +49,7 @@ def victory(player_object):
     Allows them to quit or play again and will eventually add to a 
     board in a Google Sheet."""
     print(f'Well done Captain {player_object.name}. You have saved the Star Republic!')
-    #Add path to play again or allow the player to quit the game
+    main()
 
 
 def display_options(player_object):
@@ -64,7 +64,7 @@ def display_options(player_object):
     print(f'{i}) Perform a risky maneuver.')
 
 
-def scenario_intro(number):
+def scenario_intro(number, player_object):
     if number == 1:
         print('\n\nAs you go to leave Sector A. A large asteroid storm appears! You are about to be caught in the middle of it. What do you do?')
     elif number == 2:
@@ -75,12 +75,14 @@ def scenario_intro(number):
         print('As you enter Sector D, you notice a blockade of Robo-Empire ships. There`s no way you could fight them all. What do you do?')
     elif number == 5:
         print('Upon arrival in Sector E you see your destination appear after typing in your encrypted password. The end of your journey seems so close now. But out of nowhere the capital ship, the Robo-Annihilator, of the Robo-Empire appears and starts to pull you in with its tractor beam. What do you do?')
+    elif number == 6:
+        victory(player_object)
 
 
 def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
     """Function for calling the first scenario 
     for the player."""
-    scenario_intro(int(scenario_number))
+    scenario_intro(int(scenario_number), player_object)
     display_options(player_object)
     number_choice = int(input('Please choose an option using the numbers provided: '))
     if number_choice == len(player_object.cargo) + 1:
@@ -95,7 +97,8 @@ def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
             game_over(player_object)
     elif number_choice <= len(player_object.cargo):
         if player_object.cargo[number_choice - 1] == WINNING_CARGO[int(scenario_number)-1]:
-            pass #remove temporary forcefield
+            player_object.cargo.remove(WINNING_CARGO[int(scenario_number)-1])
+            scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO)
         else:
             game_over(player_object)
     
@@ -130,10 +133,8 @@ class Player:
         risky maneuver taken"""
         floating_num = random.random()
         if floating_num >= factor:
-            print(True)
             return True
         else:
-            print(False)
             return False
 
         
@@ -151,7 +152,7 @@ def main():
     
     main_player = Player(player_name, player_ship_name, cargo_items)
     WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
-    scenario_one(main_player, 1, 0.1, WINNING_CARGO)
+    scenario_one(main_player, int(1), int(0.1), WINNING_CARGO)
     
 
 def validate_name(name):
