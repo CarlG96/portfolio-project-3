@@ -40,7 +40,7 @@ def decide_on_items():
 def game_over(player_object):
     """Function which is called when the player loses the
     game. Allows them to quit or play again."""
-    print(f'Captain {player_object.name} has died.')
+    print(f'\n\nCaptain {player_object.name} has died.')
     print('Would you like to try again?')
     #Add path back to main or allow the player to quit game
 
@@ -48,7 +48,7 @@ def victory(player_object):
     """Function which is called when the player wins the game.
     Allows them to quit or play again and will eventually add to a 
     board in a Google Sheet."""
-    print(f'Well done Captain {player_object.name}. You have saved the Star Republic!')
+    print(f'\n\nWell done Captain {player_object.name}. You have saved the Star Republic!')
     main()
 
 
@@ -68,13 +68,13 @@ def scenario_intro(number, player_object):
     if number == 1:
         print('\n\nAs you go to leave Sector A. A large asteroid storm appears! You are about to be caught in the middle of it. What do you do?')
     elif number == 2:
-        print('As you enter Sector B, your ship starts to be pulled in by a supermassive black hole! What do you do?')
+        print('\n\nAs you enter Sector B, your ship starts to be pulled in by a supermassive black hole! What do you do?')
     elif number == 3:
-        print('About halfway through Sector C. A garbled alien transmission comes through from a spaceship on your radar. You have no idea what they want, but their heat signatures suggest they are powering up their weapons. What do you do?')
+        print('\n\nAbout halfway through Sector C. A garbled alien transmission comes through from a spaceship on your radar. You have no idea what they want, but their heat signatures suggest they are powering up their weapons. What do you do?')
     elif number == 4:
-        print('As you enter Sector D, you notice a blockade of Robo-Empire ships. There`s no way you could fight them all. What do you do?')
+        print('\n\nAs you enter Sector D, you notice a blockade of Robo-Empire ships. There`s no way you could fight them all. What do you do?')
     elif number == 5:
-        print('Upon arrival in Sector E you see your destination appear after typing in your encrypted password. The end of your journey seems so close now. But out of nowhere the capital ship, the Robo-Annihilator, of the Robo-Empire appears and starts to pull you in with its tractor beam. What do you do?')
+        print('\n\nUpon arrival in Sector E you see your destination appear after typing in your encrypted password. The end of your journey seems so close now. But out of nowhere the capital ship, the Robo-Annihilator, of the Robo-Empire appears and starts to pull you in with its tractor beam. What do you do?')
     elif number == 6:
         victory(player_object)
 
