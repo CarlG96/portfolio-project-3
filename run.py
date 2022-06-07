@@ -1,7 +1,7 @@
 import random
 
 def introduction():
-    """Introduces the user to the game"""
+    """Introduces the user to the game."""
     print('Welcome to Star Traveller!')
     print('You are a captain of the Star Republic Navy.')
     print('You have been tasked with delivering a superweapon from Sector A to Sector E.')
@@ -9,11 +9,27 @@ def introduction():
     print('You will face many perils on your way there, but the Star Republic is relying on you!')
     print('\n\n\n')
 
+def validate_name():
+    """Validates the names provided
+    for captain and ship are between 4 and 16 
+    letters"""
+
+def validate_initial_cargo_choices():
+    """Validates the initial cargo choices.
+    Makess sure they are not value or index errors"""
+
+def validate_replay_choice():
+    """Validates whether the player has chosen either 'Y' or 'N' 
+    for their choice in the replay function."""
+
+def validate_scenario_choice():
+    """Validates the player's scenario choice.
+    Check's for Value or Index Error."""
 
 def get_name(name_in_question):
     """Gets the user's name for their captain and returns the name"""
     name = ((input(f'What is your {name_in_question}, captain? ')).strip()).capitalize()
-    #validate name function, name must be between 5 and 15 characters and letters
+    #validate name function, name must be between 4 and 15 characters and letters
     return name
 
 
@@ -40,6 +56,8 @@ def decide_on_items():
     return cargo
 
 def replay():
+    """Function which is called and asks the player whether they would like to replay
+    the game."""
     print('Would you like to play again?')
     choice = input('Type Y for yes and N for no: ').upper()
     #Need validate function to make sure value is Y or N
@@ -80,6 +98,9 @@ def display_options(player_object):
 
 
 def scenario_intro(number, player_object):
+    """Function which decides on which scenario intro text
+    is provided to the player depending on how far along the game they 
+    are. Moves to victory function if player has completed all scenarios."""
     if number == 1:
         print('\n\nAs you go to leave Sector A. A large asteroid storm appears! You are about to be caught in the middle of it. What do you do?')
     elif number == 2:
