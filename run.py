@@ -42,7 +42,12 @@ def game_over(player_object):
     game. Allows them to quit or play again."""
     print(f'\n\nCaptain {player_object.name} has died.')
     print('Would you like to try again?')
-    #Add path back to main or allow the player to quit game
+    choice = input('Type Y for yes and N for no: ').upper()
+    if choice == 'Y':
+        main()
+    elif choice == 'N':
+        pass
+
 
 def victory(player_object):
     """Function which is called when the player wins the game.
@@ -152,7 +157,7 @@ def main():
     
     main_player = Player(player_name, player_ship_name, cargo_items)
     WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
-    scenario_one(main_player, int(1), int(0.1), WINNING_CARGO)
+    scenario_one(main_player, int(1), float(0.1), WINNING_CARGO)
     
 
 def validate_name(name):
