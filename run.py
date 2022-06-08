@@ -21,8 +21,8 @@ def validate_initial_cargo_choices(potential_cargo):
     not_validated = True
     while not_validated:
         try:
-            number = int(input('Choose which item you want by typing in the number: ')) - 1
-            if number > len(potential_cargo) or number < 1:
+            number = int(input('Choose which item you want by typing in the number: ')) -1
+            if number > len(potential_cargo) or number < 0:
                 raise IndexError()
             return number
         except ValueError:
@@ -33,6 +33,16 @@ def validate_initial_cargo_choices(potential_cargo):
 def validate_replay_choice():
     """Validates whether the player has chosen either 'Y' or 'N' 
     for their choice in the replay function."""
+    not_validated = True
+    while not_validated:
+        try:
+            replay_choice = input('Type Y for yes and N for no: ').upper()
+            if replay_choice != 'Y' and replay_choice != 'N':
+                print(replay_choice)
+                raise ValueError()
+            return replay_choice
+        except ValueError:
+            print('Sorry, that choice is not available.')
 
 def validate_scenario_choice(player_object):
     """Validates the player's scenario choice.
@@ -84,8 +94,7 @@ def replay():
     """Function which is called and asks the player whether they would like to replay
     the game."""
     print('Would you like to play again?')
-    choice = input('Type Y for yes and N for no: ').upper()
-    #Need validate function to make sure value is Y or N
+    choice = validate_replay_choice()  
     if choice == 'Y':
         main()
     elif choice == 'N':
