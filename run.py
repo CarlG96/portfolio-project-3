@@ -127,8 +127,24 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
             f'event horizon. Breathing a sigh of relief, Captain {player_object.name} '
             'makes the hyperspace jump to Sector C.')
         elif conclusion_number == 2:
+            print(f'Captain {player_object.name} directs {player_object.ship_name} '
+            'on a course so that it will approach the black hole\'s orbit at '
+            'a tangent, catapulting the ship out of the black hole\'s '
+            f'gravity well. {player_object.ship_name} is launched across the '
+            f'solar system but Captain {player_object.name}\'s quick thinking '
+            f'has saved them. Captain {player_object.name} makes the hyperspace '
+            'jump to Sector C.')
         elif conclusion_number == 3:
+            print(f'Captain {player_object.name} switches on the Anti-Gravity '
+            f'Device in {player_object.ship_name}\'s cargo. This causes '
+            f'{player_object.ship_name} to be propelled away from the black '
+            f'hole instead of towards it. Captain {player_object.name} makes the hyperspace '
+            'jump to Sector C.')
         elif conclusion_number == 4:
+            print(f'Captain {player_object.name} fails to stop {player_object.ship_name} '
+            f'from being pulled into the black hole. As they pass the event horizon, '
+            f'{player_object.name} notices time start to slow and gravity begin to get continually '
+            'heavier and heavier...')
     elif scenario == 3:
         if conclusion_number == 1:
         elif conclusion_number == 2:
