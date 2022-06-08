@@ -89,6 +89,13 @@ def decide_on_items():
         k += 1
     return cargo
 
+def scenario_conclusion(player_object, scenario_number, conclusion_number):
+    """Function which takes in argument for which 
+    scenario is playing and how the player concluded it. Also takes
+    in argument for player object.
+    Prints flavour text to give the player some idea of what happened
+    as a result of that scenario."""
+
 def replay():
     """Function which is called and asks the player whether they would like to replay
     the game."""
