@@ -2,7 +2,7 @@ import random
 
 def introduction():
     """Introduces the user to the game."""
-    print('Welcome to Star Traveller!')
+    print('\n\nWelcome to Star Traveller!')
     print('You are a captain of the Star Republic Navy.')
     print('You have been tasked with delivering a superweapon from Sector A to Sector E.')
     print('This will allow the Star Republic to defeat the Robo-Empire.')
@@ -14,8 +14,7 @@ def validate_initial_cargo_choices(potential_cargo):
     """Validates the initial cargo choices.
     Makess sure they are not value or index errors.
     Returns choice."""
-    not_validated = True
-    while not_validated:
+    while True:
         try:
             number = int(input('Choose which item you want by typing in the number: ')) -1
             if number > len(potential_cargo) or number < 0:
@@ -29,8 +28,7 @@ def validate_initial_cargo_choices(potential_cargo):
 def validate_replay_choice():
     """Validates whether the player has chosen either 'Y' or 'N' 
     for their choice in the replay function."""
-    not_validated = True
-    while not_validated:
+    while True:
         try:
             replay_choice = input('Type Y for yes and N for no: ').upper()
             if replay_choice != 'Y' and replay_choice != 'N':
@@ -44,8 +42,7 @@ def validate_scenario_choice(player_object):
     """Validates the player's scenario choice.
     Check's for Value or Index Error. Returns
     integer for scenario choice."""
-    not_validated = True
-    while not_validated:
+    while True:
         try:
             number = int(input('\nPlease choose an option using the numbers provided: '))
             if number > len(player_object.cargo) + 2 or number < 1:
@@ -72,11 +69,12 @@ def get_name(name_in_question):
 
 def decide_on_items():
     """User chooses 3 of 5 items. Function returns a list of these three items."""
+    print('\nOn your journey you will need to take some items for perilous situations.')
     potential_cargo_items = ['Temporary Force Shield', 'Anti-Gravity Device', 'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
     cargo = []
     j = 1
     while j < 4:
-        print('Here are the list of items: ')
+        print('\nHere are the list of items you can still take: ')
         for potential_cargo_item, i in zip(potential_cargo_items, range(len(potential_cargo_items))):
             print(f'{i + 1}) {potential_cargo_item}')
         cargo_choice = validate_initial_cargo_choices(potential_cargo_items) 
@@ -212,7 +210,7 @@ class Player:
 
 def main():
     """Main function"""
-    #introduction()
+    introduction()
     player_name = get_name("name")
     print(f'Hello, {player_name}.')
 
