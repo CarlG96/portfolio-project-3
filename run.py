@@ -147,9 +147,23 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
             'heavier and heavier...')
     elif scenario == 3:
         if conclusion_number == 1:
+            print(f'Captain {player_object.name} uses {player_object.ship_name}\'s fuel '
+            f'reserves, flying it out of range of the alien\'s antiquated weapon systems. '
+            f'Captain {player_object.name} makes a safe hyperspace jump to Sector D.')
         elif conclusion_number == 2:
+            print(f'Captain {player_object.name} realises {player_object.ship_name} is far '
+            f'superior to the aliens\' ships. Captain {player_object.name} powers up {player_object.ship_name}\'s '
+            f'weapon systems and fires before the aliens have a chance to power up their own, destroying '
+            f'the aliens. Captain {player_object.name} makes the hyperspace jump to Sector D.')
         elif conclusion_number == 3:
+            print(f'Turning on the Galactic Translator, Captain {player_object.name} '
+            f'speaks with the aliens. It turns out they are the Bug People from Sector X, '
+            f'and have mistaken you for an agent of the Robo-Empire. After clearing up the '
+            f'misunderstanding, {player_object.name} makes a quick hyperspace jump to Sector D.')
         elif conclusion_number == 4:
+            print(f'Captain {player_object.name} attempts to answer the transmission in all the '
+            f'space languages they know, but no answer comes back. The aliens power up their '
+            f'weapon systems and their turbo laser destroy {player_object.ship_name}.')
     elif scenario == 4:
         if conclusion_number == 1:
         elif conclusion_number == 2:
