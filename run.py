@@ -89,12 +89,62 @@ def decide_on_items():
         k += 1
     return cargo
 
-def scenario_conclusion(player_object, scenario_number, conclusion_number):
+def scenario_conclusion(player_object, scenario, conclusion_number):
     """Function which takes in argument for which 
     scenario is playing and how the player concluded it. Also takes
     in argument for player object.
     Prints flavour text to give the player some idea of what happened
     as a result of that scenario."""
+    if scenario == 1:
+        if conclusion_number == 1:
+            print(f'{player_object.name} uses extra fuel to accelerate '
+            f'{player_object.ship_name} out of the way before the '
+            f'asteroid storm hits. {player_object.name} makes the '
+            'hyperspace jump to Sector B.')
+
+        elif conclusion_number == 2:
+            print(f'Captain {player_object.name} masterfully pilots the '
+            f'{player_object.ship_name} through the asteroid storm, '
+            'performing incredibly risky maneuvers that push their '
+            'skills to the limit. Having survived this, '
+            f'Captain {player_object.name} makes the hyperspace jump to '
+            'Sector B.')
+        elif conclusion_number == 3:
+            print(f'Captain {player_object.name} activates the Temporary Force '
+            'Shield they took in the cargo. A kinetic barrier '
+            f'envelops {player_object.ship_name}, allowing it to '
+            'safely traverse the asteroid storm. Feeling rather lucky; '
+            f'Captain {player_object.name} makes the hyperspace jump to Sector B.')
+        elif conclusion_number == 4:
+            print('One after another, asteroids crash into the side of '
+            f'{player_object.ship_name}. The hull is eventually breached '
+            f'and Captain {player_object.name} is left to the mercy of cold space.')
+    elif scenario == 2:
+        if conclusion_number == 1:
+            print(f'Switching on {player_object.ship_name}\'s afterburners, '
+            f'Captain {player_object.name} burns some of the additional fuel '
+            'to make sure they aren\'t pulled into the black hole\'s '
+            f'event horizon. Breathing a sigh of relief, Captain {player_object.name} '
+            'makes the hyperspace jump to Sector C.')
+        elif conclusion_number == 2:
+        elif conclusion_number == 3:
+        elif conclusion_number == 4:
+    elif scenario == 3:
+        if conclusion_number == 1:
+        elif conclusion_number == 2:
+        elif conclusion_number == 3:
+        elif conclusion_number == 4:
+    elif scenario == 4:
+        if conclusion_number == 1:
+        elif conclusion_number == 2:
+        elif conclusion_number == 3:
+        elif conclusion_number == 4:
+    elif scenario == 5:
+        if conclusion_number == 1:
+        elif conclusion_number == 2:
+        elif conclusion_number == 3:
+        elif conclusion_number == 4:
+    return
 
 def replay():
     """Function which is called and asks the player whether they would like to replay
@@ -163,19 +213,25 @@ def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
     number_choice = validate_scenario_choice(player_object) 
     if number_choice == len(player_object.cargo) + 1:
         if player_object.use_fuel():
+            scenario_conclusion(player_object, scenario_number, 1)
             scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO) 
         else:
+            scenario_conclusion(player_object, scenario_number, 4)
             game_over(player_object)
     elif number_choice == len(player_object.cargo) + 2:
         if player_object.take_chance(risk_factor):
+            scenario_conclusion(player_object, scenario_number, 2)
             scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO) 
         else:
+            scenario_conclusion(player_object, scenario_number, 4)
             game_over(player_object)
     elif number_choice <= len(player_object.cargo):
         if player_object.cargo[number_choice - 1] == WINNING_CARGO[int(scenario_number)-1]:
             player_object.cargo.remove(WINNING_CARGO[int(scenario_number)-1])
+            scenario_conclusion(player_object, scenario_number, 3)
             scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO)
         else:
+            scenario_conclusion(player_object, scenario_number, 4)
             game_over(player_object)
     
 
