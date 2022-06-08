@@ -22,9 +22,23 @@ def validate_replay_choice():
     """Validates whether the player has chosen either 'Y' or 'N' 
     for their choice in the replay function."""
 
-def validate_scenario_choice():
+def validate_scenario_choice(player_object):
     """Validates the player's scenario choice.
-    Check's for Value or Index Error."""
+    Check's for Value or Index Error. Returns
+    integer for scenario choice."""
+    not_validated = True
+    while not_validated:
+        try:
+            number = int(input('\nPlease choose an option using the numbers provided: '))
+            if number > len(player_object.cargo) + 2 or number < 1:
+                raise IndexError()
+            return number
+        except ValueError:
+            print('Please type your option as a number.')
+        except IndexError: 
+            print(f'Please choose options between 1 and {len(player_object.cargo) +2}.')
+
+
 
 def get_name(name_in_question):
     """Gets the user's name for their captain and returns the name"""
@@ -120,8 +134,7 @@ def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
     for the player."""
     scenario_intro(int(scenario_number), player_object)
     display_options(player_object)
-    number_choice = int(input('Please choose an option using the numbers provided: '))
-    #validate function that checks for valueerror and index error 
+    number_choice = validate_scenario_choice(player_object) 
     if number_choice == len(player_object.cargo) + 1:
         if player_object.use_fuel():
             scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO) 
