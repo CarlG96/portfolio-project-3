@@ -8,11 +8,7 @@ def introduction():
     print('This will allow the Star Republic to defeat the Robo-Empire.')
     print('You will face many perils on your way there, but the Star Republic is relying on you!')
     print('\n\n\n')
-
-def validate_name():
-    """Validates the names provided
-    for captain and ship are between 4 and 16 
-    letters"""
+            
 
 def validate_initial_cargo_choices(potential_cargo):
     """Validates the initial cargo choices.
@@ -63,10 +59,15 @@ def validate_scenario_choice(player_object):
 
 
 def get_name(name_in_question):
-    """Gets the user's name for their captain and returns the name"""
-    name = ((input(f'What is your {name_in_question}, captain? ')).strip()).capitalize()
-    #validate name function, name must be between 4 and 15 characters and letters
-    return name
+    """Validates the user's name for captain and ship and returns the name"""
+    while True:
+        try:
+            name = ((input(f'What is your {name_in_question}, captain? ')).strip()).capitalize()
+            if len(name) > 15 or len(name) < 4:
+                raise ValueError()
+            return name
+        except ValueError:
+            print(f'{name_in_question} must be between 4 and 15 characters including spaces.')
 
 
 def decide_on_items():
