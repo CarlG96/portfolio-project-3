@@ -14,9 +14,21 @@ def validate_name():
     for captain and ship are between 4 and 16 
     letters"""
 
-def validate_initial_cargo_choices():
+def validate_initial_cargo_choices(potential_cargo):
     """Validates the initial cargo choices.
-    Makess sure they are not value or index errors"""
+    Makess sure they are not value or index errors.
+    Returns choice."""
+    not_validated = True
+    while not_validated:
+        try:
+            number = int(input('Choose which item you want by typing in the number: ')) - 1
+            if number > len(potential_cargo) or number < 1:
+                raise IndexError()
+            return number
+        except ValueError:
+            print('Please type your option as an available number.')
+        except IndexError: 
+            print(f'Please choose options between 1 and {len(potential_cargo)}.')
 
 def validate_replay_choice():
     """Validates whether the player has chosen either 'Y' or 'N' 
@@ -34,7 +46,7 @@ def validate_scenario_choice(player_object):
                 raise IndexError()
             return number
         except ValueError:
-            print('Please type your option as a number.')
+            print('Please type your option as an available number.')
         except IndexError: 
             print(f'Please choose options between 1 and {len(player_object.cargo) +2}.')
 
@@ -56,8 +68,7 @@ def decide_on_items():
         print('Here are the list of items: ')
         for potential_cargo_item, i in zip(potential_cargo_items, range(len(potential_cargo_items))):
             print(f'{i + 1}) {potential_cargo_item}')
-        cargo_choice = int(input('Choose which item you want by typing in the number: ')) - 1
-        #Need validate function for both ValueError and IndexError
+        cargo_choice = validate_initial_cargo_choices(potential_cargo_items) 
         cargo.append(potential_cargo_items[cargo_choice])
         potential_cargo_items.remove(potential_cargo_items[cargo_choice])
         j += 1
