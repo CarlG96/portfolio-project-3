@@ -63,6 +63,8 @@ def get_name(name_in_question):
             name = ((input(f'What is your {name_in_question}, captain? ')).strip()).capitalize()
             if len(name) > 15 or len(name) < 4:
                 raise ValueError()
+            if name_in_question == 'ship name':
+                name = 'the ' + name
             return name
         except ValueError:
             print(f'{name_in_question} must be between 4 and 15 characters including spaces.')
