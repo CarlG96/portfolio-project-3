@@ -189,9 +189,32 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
             f'a massive explosion.')
     elif scenario == 5:
         if conclusion_number == 1:
+            print(f'Using the last of {player_object.ship_name}\'s fuel reserve, '
+            f'Captain {player_object.name} causes the force of the ship to overpower '
+            f'the Robo-Annihilator\'s tractor beam; escaping from the Robo-Annihilator. '
+            f'Captain {player_object.name} delivers the superweapon to the Star Republic '
+            f'Navy, and after the war is won becomes Admiral {player_object.name}.')
         elif conclusion_number == 2:
+            print(f'Captain {player_object.name} allows themselves to be taken aboard the '
+            f'Robo-Annihilator. Inside, they pull out a concealed laser pistol and kill the '
+            f'Robo-Guards, running through the ship before activating its self-destruct button. '
+            f'Captain {player_object.name} boards {player_object.ship_name} just in time to escape '
+            f'the exploding Robo-Annihilator. Afterwards, they deliver the superweapon to the '
+            f'Star Republic Navy, becoming Admiral {player_object.name} and winning the war against '
+            f'the Robo-Empire.')
         elif conclusion_number == 3:
+            print(f'As {player_object.ship_name} is pulled by the tractor beam. Captain '
+            f'{player_object.name} releases the Nuclear Mines from the cargo hold. The '
+            f'mines are pulled into the hold of the Robo-Annihilator, causing the dreadnought '
+            f'to explode in a mushroom cloud. {player_object.ship_name} just escapes the '
+            f'destruction and after delivering the superweapon to the Star Republic Navy, '
+            f'Captain {player_object.name} became known as the hero \'{player_object.name} '
+            f'the Daring\' for their exploits in destroying the Robo-Annihilator.')
         elif conclusion_number == 4:
+            print(f'Captain {player_object.name} is imprisoned aboard the Robo-Annihilator. '
+            f'The superweapon is taken and the last thing {player_object.name} sees before they '
+            f'are executed is the capital world of the Star Republic being destroyed by the '
+            f'superweapon.')
     return
 
 def replay():
