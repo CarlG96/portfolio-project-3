@@ -166,9 +166,27 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
             f'weapon systems and their turbo laser destroy {player_object.ship_name}.')
     elif scenario == 4:
         if conclusion_number == 1:
+            print(f'Just in time, Captain {player_object.name} uses the fuel reserves '
+            f'to boost and hide {player_object.ship_name} behind a planet\'s rings, '
+            f'evading the blockade\'s sensors. Captain {player_object.name} waits for '
+            f'the blockade to move before making the hyperspace jump to Sector E.')
         elif conclusion_number == 2:
+            print(f'Captain {player_object.name} realises that they can\'t defeat the '
+            f'entire blockade by themselves, but comes up with a cunning plan. They wait to '
+            f'be targetted by the blockade\'s missiles, only to fly {player_object.ship_name} ' 
+            f'close to the blockade, causing the missiles to destroy the blockade itself! '
+            f'Captain {player_object.name} passes the destroyed blockade and hyperspace jumps '
+            f'to Sector E.')
         elif conclusion_number == 3:
+            print(f'Thinking quickly, Captain {player_object.name} activates the Cloaking '
+            f'Device in the cargo hold. {player_object.ship_name} becomes invisible to the '
+            f'naked eye and to sensors. Captain {player_object.name} moves the ship carefully '
+            f'past the blockade and hyperspace jumps to Sector E when out of their range.')
         elif conclusion_number == 4:
+            print(f'A barrage of homing missiles fly towards {player_object.ship_name}. '
+            f'{player_object.name}\'s pilot skills are no match for the missiles\'s '
+            f'ability to turn on a whim, and {player_object.ship_name} is destroyed in '
+            f'a massive explosion.')
     elif scenario == 5:
         if conclusion_number == 1:
         elif conclusion_number == 2:
