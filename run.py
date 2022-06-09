@@ -340,7 +340,7 @@ class Player:
         self.name = name
         self.ship_name = ship_name
         self.cargo = cargo
-        self.fuel = 3
+        self.fuel = 2
 
     def use_fuel(self):
         """Removes one fuel from the 
