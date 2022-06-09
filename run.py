@@ -1,6 +1,24 @@
 import random
 
- 
+
+def instructions():
+    """Gives the player instructions on how 
+    to play the game. Returns nothing."""
+
+
+def check_victories_and_deaths():
+    """Displays 'leaderboard' of victories 
+    and game overs of player's who have played the game
+    before (starts with generic 'leaderboard'). Returns
+    nothing."""
+
+def add_to_victories_and_deaths(player_object):
+    """Adds to the 'leaderboard' of players
+    who have played the game using the player's 
+    captain name and ship name. Is called at every victory or 
+    game over."""
+
+
 def introduction():
     """Introduces the user to the game."""
     print('\n\nWelcome to Star Traveller!')
