@@ -36,7 +36,8 @@ def start_menu():
         elif option == 3:
             check_victories_and_deaths()
         elif option == 4:
-            #quit
+            #needs a function put here
+            return
 
 
 def instructions():
@@ -435,13 +436,23 @@ def main():
     """Main function"""
     start_menu()
     introduction()
-    player_name = get_name("name")
-    print(f'Hello, {player_name}.')
+    name_correct = False
+    ship_name_correct = False
+    cargo_items_correct = False
+    while not name_correct:
+        player_name = get_name("name")
+        print(f'Hello, {player_name}.')
+        #choose name okay function
 
-    player_ship_name = get_name("ship name")
-    print(f'Your ship is called {player_ship_name}.')
+    while not ship_name_correct:
+        player_ship_name = get_name("ship name")
+        print(f'Your ship is called {player_ship_name}.')
+        #choose ship name okay function
     
-    cargo_items = decide_on_items()
+    while not cargo_items_correct:
+
+        cargo_items = decide_on_items()
+        #choose cargo okay function
     
     main_player = Player(player_name, player_ship_name, cargo_items)
     WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
