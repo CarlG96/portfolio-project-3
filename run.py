@@ -1,10 +1,54 @@
 import random
 
 
+def validate_start_menu_option():
+    """Validates whether the player wants to
+    play Star Traveller, see the instructions for
+    it, check the leaderboard or quit the game.
+    Returns number."""
+    while True:
+        print('1) Play Star Traveller')
+        print('2) Instructions for Star Traveller')
+        print('3) Check the "leaderboard"')
+        print('4) Quit Star Traveller')
+        try:
+            number = int(input('Choose which option you want by typing the corresponding number. '))
+            if number > 4 or number < 1:
+                raise IndexError()
+            return number
+        except ValueError:
+            print('Please type your option as an available number.')
+        except IndexError:
+            print('Please choose an option between 1 and 4.')
+
+def start_menu():
+    """Gives the player the options of playing the game, 
+    reading the instructions for how the game is 
+    played, checking the 'leaderboard' or quitting the game.
+    """
+    while True:
+        option = validate_start_menu_option()
+
+        if option == 1:
+            return
+        elif option == 2:
+            instructions()
+        elif option == 3:
+            check_victories_and_deaths()
+        elif option == 4:
+            #quit
+
+
 def instructions():
     """Gives the player instructions on how 
     to play the game. Returns nothing."""
-
+    print('In Star Traveller, you must choose the name of your '
+    'captain, the name of your ship and choose a collection of useful '
+    'items to hold in your cargo. You will then have to navigate a series '
+    'scenarios, choosing to burn precious fuel, use up your item collection '
+    'or take increasingly dangerous risks to progress. If you fail '
+    'a scenario, you will get a game over. The game is played by inputting '
+    'numbers or letters or strings of text when prompted by the text on screen.')
 
 def check_victories_and_deaths():
     """Displays 'leaderboard' of victories 
@@ -389,6 +433,7 @@ class Player:
 
 def main():
     """Main function"""
+    start_menu()
     introduction()
     player_name = get_name("name")
     print(f'Hello, {player_name}.')
