@@ -96,7 +96,6 @@ def validate_replay_choice():
         try:
             replay_choice = input('Type Y for yes and N for no: ').upper()
             if replay_choice != 'Y' and replay_choice != 'N':
-                print(replay_choice)
                 raise ValueError()
             return replay_choice
         except ValueError:
@@ -430,8 +429,26 @@ class Player:
         else:
             return False
 
-        
 
+def confirm_choice(question, details):
+    """Function that asks the player if the specific detail
+    (name, ship name or cargo items) are correct before creating
+    the player object in the main function. This function returns
+    either True or False to break each while loop in the main 
+    function."""
+    while True:
+        try:
+            choice = input(f'Your {question}: {details}. Is this correct?'
+            'Type Y for yes and N for no: ').upper()
+            if choice != 'Y' and choice != 'N':
+                raise ValueError()
+            elif choice == 'Y':
+                return True
+            elif choice == 'N':
+                return False
+        except ValueError:
+            print('Sorry, that choice is not available.')
+        
 def main():
     """Main function"""
     start_menu()
@@ -442,17 +459,16 @@ def main():
     while not name_correct:
         player_name = get_name("name")
         print(f'Hello, {player_name}.')
-        #choose name okay function
+        name_correct = confirm_choice('Captain\'s name is', player_name)
 
     while not ship_name_correct:
         player_ship_name = get_name("ship name")
         print(f'Your ship is called {player_ship_name}.')
-        #choose ship name okay function
+        ship_name_correct = confirm_choice('Ship\'s name is', player_ship_name)
     
     while not cargo_items_correct:
-
         cargo_items = decide_on_items()
-        #choose cargo okay function
+        cargo_items_correct = confirm_choice('Cargo hold contains these items', cargo_items)
     
     main_player = Player(player_name, player_ship_name, cargo_items)
     WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
