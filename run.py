@@ -9,17 +9,16 @@ def validate_start_menu_option():
     while True:
         print('1) Play Star Traveller')
         print('2) Instructions for Star Traveller')
-        print('3) Check the "leaderboard"')
-        print('4) Quit Star Traveller')
+        print('3) Quit Star Traveller')
         try:
             number = int(input('Choose which option you want by typing the corresponding number. '))
-            if number > 4 or number < 1:
+            if number > 3 or number < 1:
                 raise IndexError()
             return number
         except ValueError:
             print('Please type your option as an available number.')
         except IndexError:
-            print('Please choose an option between 1 and 4.')
+            print('Please choose an option between 1 and 3.')
 
 def start_menu():
     """Gives the player the options of playing the game, 
@@ -34,8 +33,6 @@ def start_menu():
         elif option == 2:
             instructions()
         elif option == 3:
-            check_victories_and_deaths()
-        elif option == 4:
             #needs a function put here
             return
 
@@ -50,18 +47,6 @@ def instructions():
     'or take increasingly dangerous risks to progress. If you fail '
     'a scenario, you will get a game over. The game is played by inputting '
     'numbers or letters or strings of text when prompted by the text on screen.')
-
-def check_victories_and_deaths():
-    """Displays 'leaderboard' of victories 
-    and game overs of player's who have played the game
-    before (starts with generic 'leaderboard'). Returns
-    nothing."""
-
-def add_to_victories_and_deaths(player_object):
-    """Adds to the 'leaderboard' of players
-    who have played the game using the player's 
-    captain name and ship name. Is called at every victory or 
-    game over."""
 
 
 def introduction():
@@ -321,7 +306,6 @@ def game_over(player_object):
     """Function which is called when the player loses the
     game. Allows them to quit or play again."""
     print(f'\n\nCaptain {player_object.name} has died.')
-    #Add function to record player's death to Google Sheets
     replay()
 
 
@@ -330,7 +314,6 @@ def victory(player_object):
     Allows them to quit or play again and will eventually add to a 
     board in a Google Sheet."""
     print(f'\n\nWell done Captain {player_object.name}. You have saved the Star Republic!')
-    #Add function to record player's victory to Google Sheets
     replay()
    
 
