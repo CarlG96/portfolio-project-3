@@ -146,6 +146,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
     as a result of that scenario."""
     if scenario == 1:
         if conclusion_number == 1:
+            print('\n')
             print(f'{player_object.name} uses extra fuel to accelerate '
             f'{player_object.ship_name} out of the way before the '
             f'asteroid storm hits. {player_object.name} makes the '
@@ -155,24 +156,28 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
             'scenario as the player\'s fuel can\'t decrease this low '
             'in the first scenario.')
         elif conclusion_number == 3:
-            print(f'Captain {player_object.name} masterfully pilots the '
+            print('\n')
+            print(f'Captain {player_object.name} masterfully pilots '
             f'{player_object.ship_name} through the asteroid storm, '
             'performing incredibly risky maneuvers that push their '
             'skills to the limit. Having survived this, '
             f'Captain {player_object.name} makes the hyperspace jump to '
             'Sector B.')
         elif conclusion_number == 4:
+            print('\n')
             print(f'Captain {player_object.name} activates the Temporary Force '
             'Shield they took in the cargo. A kinetic barrier '
             f'envelops {player_object.ship_name}, allowing it to '
             'safely traverse the asteroid storm. Feeling rather lucky; '
             f'Captain {player_object.name} makes the hyperspace jump to Sector B.')
         elif conclusion_number == 5:
+            print('\n')
             print('One after another, asteroids crash into the side of '
             f'{player_object.ship_name}. The hull is eventually breached '
             f'and Captain {player_object.name} is left to the mercy of cold space.')
     elif scenario == 2:
         if conclusion_number == 1:
+            print('\n')
             print(f'Switching on {player_object.ship_name}\'s afterburners, '
             f'Captain {player_object.name} burns some of the additional fuel '
             'to make sure they aren\'t pulled into the black hole\'s '
@@ -183,6 +188,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
             'scenario as the player\'s fuel can\'t decrease this low '
             'in the second scenario.')
         elif conclusion_number == 3:
+            print('\n')
             print(f'Captain {player_object.name} directs {player_object.ship_name} '
             'on a course so that it will approach the black hole\'s orbit at '
             'a tangent, catapulting the ship out of the black hole\'s '
@@ -191,54 +197,64 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
             f'has saved them. Captain {player_object.name} makes the hyperspace '
             'jump to Sector C.')
         elif conclusion_number == 4:
+            print('\n')
             print(f'Captain {player_object.name} switches on the Anti-Gravity '
             f'Device in {player_object.ship_name}\'s cargo. This causes '
             f'{player_object.ship_name} to be propelled away from the black '
             f'hole instead of towards it. Captain {player_object.name} makes the hyperspace '
             'jump to Sector C.')
         elif conclusion_number == 5:
+            print('\n')
             print(f'Captain {player_object.name} fails to stop {player_object.ship_name} '
             f'from being pulled into the black hole. As they pass the event horizon, '
             f'{player_object.name} notices time start to slow and gravity begin to get continually '
             'heavier and heavier...')
     elif scenario == 3:
         if conclusion_number == 1:
+            print('\n')
             print(f'Captain {player_object.name} uses {player_object.ship_name}\'s fuel '
             f'reserves, flying it out of range of the aliens\' antiquated weapon systems. '
             f'Captain {player_object.name} makes a safe hyperspace jump to Sector D.')
         elif conclusion_number == 2:
+            print('\n')
             print(f'Captain {player_object.name} tries to use {player_object.ship_name}\'s '
             f'fuel reserves to fly out of range of the alien\' weapon systems, but '
             f'they find there is no more reserve. "If only I\'d taken more fuel" is the last '
             f'thought to pass into {player_object.name}\'s head before {player_object.ship_name} '
             f'explodes.')
         elif conclusion_number == 3:
+            print('\n')
             print(f'Captain {player_object.name} realises {player_object.ship_name} is far '
             f'superior to the aliens\' ships. Captain {player_object.name} powers up {player_object.ship_name}\'s '
             f'weapon systems and fires before the aliens have a chance to power up their own, destroying '
             f'the aliens. Captain {player_object.name} makes the hyperspace jump to Sector D.')
         elif conclusion_number == 4:
+            print('\n')
             print(f'Turning on the Galactic Translator, Captain {player_object.name} '
             f'speaks with the aliens. It turns out they are the Bug People from Sector X, '
             f'and have mistaken you for an agent of the Robo-Empire. After clearing up the '
             f'misunderstanding, {player_object.name} makes a quick hyperspace jump to Sector D.')
         elif conclusion_number == 5:
+            print('\n')
             print(f'Captain {player_object.name} attempts to answer the transmission in all the '
             f'space languages they know, but no answer comes back. The aliens power up their '
             f'weapon systems and their turbo laser destroy {player_object.ship_name}.')
     elif scenario == 4:
         if conclusion_number == 1:
+            print('\n')
             print(f'Just in time, Captain {player_object.name} uses the fuel reserves '
             f'to boost and hide {player_object.ship_name} behind a planet\'s rings, '
             f'evading the blockade\'s sensors. Captain {player_object.name} waits for '
             f'the blockade to move before making the hyperspace jump to Sector E.')
         elif conclusion_number == 2:
+            print('\n')
             print(f'Captain {player_object.name} attempts to move quickly to hide from the '
             f'blockade behind a planet\'s rings, but just when they want to tap into the '
             f'fuel reserves, they realise there are none left. {player_object.ship_name} drifts '
             f'into view of the blockade after several minutes, and is destroyed by the '
             f'incoming missiles.' )
         elif conclusion_number == 3:
+            print('\n')
             print(f'Captain {player_object.name} realises that they can\'t defeat the '
             f'entire blockade by themselves, but comes up with a cunning plan. They wait to '
             f'be targetted by the blockade\'s missiles, only to fly {player_object.ship_name} ' 
@@ -246,11 +262,13 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
             f'Captain {player_object.name} passes the destroyed blockade and hyperspace jumps '
             f'to Sector E.')
         elif conclusion_number == 4:
+            print('\n')
             print(f'Thinking quickly, Captain {player_object.name} activates the Cloaking '
             f'Device in the cargo hold. {player_object.ship_name} becomes invisible to the '
             f'naked eye and to sensors. Captain {player_object.name} moves the ship carefully '
             f'past the blockade and hyperspace jumps to Sector E when out of their range.')
         elif conclusion_number == 5:
+            print('\n')
             print(f'A barrage of homing missiles fly towards {player_object.ship_name}. '
             f'{player_object.name}\'s pilot skills are no match for the missiles\'s '
             f'ability to turn on a whim, and {player_object.ship_name} is destroyed in '
