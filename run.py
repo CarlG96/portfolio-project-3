@@ -13,15 +13,13 @@ def validate_start_menu_option():
         print('1) Play Star Traveller')
         print('2) Instructions for Star Traveller')
         print('3) Quit Star Traveller')
-        try:
-            number = int(input('Choose which option you want by typing the corresponding number. '))
-            if number > 3 or number < 1:
-                raise IndexError()
+        
+        number = (input('Choose which option you want by typing the corresponding number. '))
+        if number not in ['1','2','3']:
+            print('Invalid choice option. Please input a number between 1 and 3.')
+        else:
             return number
-        except ValueError:
-            print('Please type your option as an available number.')
-        except IndexError:
-            print('Please choose an option between 1 and 3.')
+        
 
 def start_menu():
     """Gives the player the options of playing the game, 
@@ -31,11 +29,11 @@ def start_menu():
     while True:
         option = validate_start_menu_option()
 
-        if option == 1:
+        if option == '1':
             return
-        elif option == 2:
+        elif option == '2':
             instructions()
-        elif option == 3:
+        elif option == '3':
             quit_out()
 
 
