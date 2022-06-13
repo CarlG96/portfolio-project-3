@@ -76,15 +76,14 @@ def validate_initial_cargo_choices(potential_cargo):
 
 def validate_replay_choice():
     """Validates whether the player has chosen either 'Y' or 'N' 
-    for their choice in the replay function."""
+    for their choice in the replay function. Returns the player's
+    choice."""
     while True:
-        try:
-            replay_choice = input('Type Y for yes and N for no: ').upper()
-            if replay_choice != 'Y' and replay_choice != 'N':
-                raise ValueError()
-            return replay_choice
-        except ValueError:
+        replay_choice = input('Type Y for yes and N for no: ').upper()
+        if replay_choice not in ['Y', 'N']:
             print('Sorry, that choice is not available.')
+        else:
+            return replay_choice
 
 def validate_scenario_choice(player_object):
     """Validates the player's scenario choice.
