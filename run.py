@@ -14,7 +14,8 @@ def validate_start_menu_option():
         print('2) Instructions for Star Traveller')
         print('3) Quit Star Traveller')
         
-        number = (input('Choose which option you want by typing the corresponding number. '))
+        number = (input('\nChoose which option you want by typing the '
+                  'corresponding number.'))
         if number not in ['1','2','3']:
             print('Invalid choice option. Please input a number between 1 and 3.')
         else:
