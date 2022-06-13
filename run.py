@@ -1,5 +1,8 @@
 import random
 
+def quit_out():
+    print('Thanks for playing Star Traveller!')
+    quit()
 
 def validate_start_menu_option():
     """Validates whether the player wants to
@@ -33,8 +36,7 @@ def start_menu():
         elif option == 2:
             instructions()
         elif option == 3:
-            #needs a function put here
-            return
+            quit_out()
 
 
 def instructions():
@@ -299,7 +301,7 @@ def replay():
     if choice == 'Y':
         main()
     elif choice == 'N':
-        pass
+        quit_out()
 
 
 def game_over(player_object):
