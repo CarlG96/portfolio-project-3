@@ -15,7 +15,6 @@ def validate_start_menu_option():
         print('1) Play Star Traveller')
         print('2) Instructions for Star Traveller')
         print('3) Quit Star Traveller')
-        
         number = (input('\nChoose which option you want by typing the '
                   'corresponding number.'))
         if number not in ['1', '2', '3']:
@@ -23,7 +22,7 @@ def validate_start_menu_option():
                   '3.')
         else:
             return number
-        
+
 
 def start_menu():
     """Gives the player the options of playing the game, 
@@ -278,76 +277,98 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
     elif scenario == 4:
         if conclusion_number == 1:
             print('\n')
-            print(f'Just in time, Captain {player_object.name} uses the fuel reserves '
-                  f'to boost and hide {player_object.ship_name} behind a planet\'s rings, '
-                  f'evading the blockade\'s sensors. Captain {player_object.name} waits for '
-                  f'the blockade to move before making the hyperspace jump to Sector E.')
+            print(f'Just in time, Captain {player_object.name} uses the fuel '
+                  f'reserves to boost and hide {player_object.ship_name} '
+                  f'behind a planet\'s rings, evading the blockade\'s '
+                  f'sensors. Captain {player_object.name} waits for '
+                  'the blockade to move before making the hyperspace '
+                  'jump to Sector E.')
         elif conclusion_number == 2:
             print('\n')
-            print(f'Captain {player_object.name} attempts to move quickly to hide from the '
-                  f'blockade behind a planet\'s rings, but just when they want to tap into the '
-                  f'fuel reserves, they realise there are none left. {player_object.ship_name} drifts '
-                  f'into view of the blockade after several minutes, and is destroyed by the '
-                  f'incoming missiles.' )
+            print(f'Captain {player_object.name} attempts to move quickly to '
+                  f'hide from the blockade behind a planet\'s rings, but just '
+                  f'when they want to tap into the fuel reserves, they '
+                  f'realise there are none left. {player_object.ship_name} '
+                  f'drifts into view of the blockade after several minutes, '
+                  'and is destroyed by the incoming missiles.')
         elif conclusion_number == 3:
             print('\n')
-            print(f'Captain {player_object.name} realises that they can\'t defeat the '
-                  f'entire blockade by themselves, but comes up with a cunning plan. They wait to '
-                  f'be targetted by the blockade\'s missiles, only to fly {player_object.ship_name} ' 
-                  f'close to the blockade, causing the missiles to destroy the blockade itself! '
-                  f'Captain {player_object.name} passes the destroyed blockade and hyperspace jumps '
+            print(f'Captain {player_object.name} realises that they can\'t '
+                  f'defeat the entire blockade by themselves, but comes up  '
+                  f'with a cunning plan. They wait to be targetted by the ' 
+                  f'blockade\'s missiles, only to fly '
+                  f'{player_object.ship_name} close to the blockade, causing '
+                  'the missiles to '
+                  f'destroy the blockade itself! Captain {player_object.name} '
+                  f'passes the destroyed blockade and hyperspace jumps '
                   f'to Sector E.')
         elif conclusion_number == 4:
             print('\n')
-            print(f'Thinking quickly, Captain {player_object.name} activates the Cloaking '
-                  f'Device in the cargo hold. {player_object.ship_name} becomes invisible to the '
-                  f'naked eye and to sensors. Captain {player_object.name} moves the ship carefully '
-                  f'past the blockade and hyperspace jumps to Sector E when out of their range.')
+            print(f'Thinking quickly, Captain {player_object.name} activates '
+                  f'the Cloaking Device in the cargo hold. '
+                  f'{player_object.ship_name} {player_object.ship_name} '
+                  'becomes invisible to the naked '
+                  f'eye and to sensors. Captain {player_object.name} '
+                  f'moves the ship carefully past the blockade and '
+                  'hyperspace jumps to Sector E when out of their range.')
         elif conclusion_number == 5:
             print('\n')
-            print(f'A barrage of homing missiles fly towards {player_object.ship_name}. '
-                  f'{player_object.name}\'s pilot skills are no match for the missiles\'s '
-                  f'ability to turn on a whim, and {player_object.ship_name} is destroyed in '
+            print(f'A barrage of homing missiles fly towards '
+                  f'{player_object.ship_name}. {player_object.name}\'s pilot  '
+                  f'skills are no match for the missiles\'s '
+                  f'ability to turn on a whim, '
+                  f'and {player_object.ship_name} is destroyed in '
                   f'a massive explosion.')
     elif scenario == 5:
         if conclusion_number == 1:
-            print(f'Using the last of {player_object.ship_name}\'s fuel reserve, '
-                  f'Captain {player_object.name} causes the force of the ship to overpower '
-                  f'the Robo-Annihilator\'s tractor beam; escaping from the Robo-Annihilator. '
-                  f'Captain {player_object.name} delivers the superweapon to the Star Republic '
-                  f'Navy, and after the war is won becomes Admiral {player_object.name}.')
+            print(f'Using the last of {player_object.ship_name}\'s fuel '
+                  f'reserve, Captain {player_object.name} causes the force of '
+                  f'the ship to overpower the Robo-Annihilator\'s tractor '
+                  f'beam; escaping from the Robo-Annihilator. Captain '
+                  f'{player_object.name} delivers the superweapon to the Star '
+                  f'Republic Navy, and after the war is '
+                  f'won becomes Admiral {player_object.name}.')
         elif conclusion_number == 2:
-            print(f'Captain {player_object.name} attempts to use the fuel reserve '
-                  f'to escape the tractor beam\'s pull, but realises there is no more reserve! '
-                  f'They are captured, the superweapon is lost, and so is the last hope of the '
-                  f'Star Republic.')
+            print(f'Captain {player_object.name} attempts to use the fuel '
+                  f'reserve to escape the tractor beam\'s pull, but realises '
+                  f'there is no more reserve! They are captured,  '
+                  f'the superweapon is lost, and so is the last hope of the '
+                  'Star Republic.')
         elif conclusion_number == 3:
-            print(f'Captain {player_object.name} allows themselves to be taken aboard the '
-                  f'Robo-Annihilator. Inside, they pull out a concealed laser pistol and kill the '
-                  f'Robo-Guards, running through the ship before activating its self-destruct button. '
-                  f'Captain {player_object.name} boards {player_object.ship_name} just in time to escape '
-                  f'the exploding Robo-Annihilator. Afterwards, they deliver the superweapon to the '
-                  f'Star Republic Navy, becoming Admiral {player_object.name} and winning the war against '
+            print(f'Captain {player_object.name} allows themselves to be '
+                  f'taken aboard theRobo-Annihilator. Inside, they pull out a '
+                  'concealed '
+                  f'laser pistol and kill the Robo-Guards, running through '
+                  f'the ship before activating its self-destruct button. '
+                  f'Captain {player_object.name} boards '
+                  f'boards {player_object.ship_name} just in time to escape '
+                  f'the exploding Robo-Annihilator. Afterwards, they deliver '
+                  f'the superweapon to the Star Republic Navy, becoming '
+                  f'Admiral {player_object.name} and winning the war against '
                   f'the Robo-Empire.')
         elif conclusion_number == 4:
-            print(f'As {player_object.ship_name} is pulled by the tractor beam. Captain '
-                  f'{player_object.name} releases the Nuclear Mines from the cargo hold. The '
-                  f'mines are pulled into the hold of the Robo-Annihilator, causing the dreadnought '
-                  f'to explode in a mushroom cloud. {player_object.ship_name} just escapes the '
-                  f'destruction and after delivering the superweapon to the Star Republic Navy, '
-                  f'Captain {player_object.name} became known as the hero \'{player_object.name} '
-                  f'the Daring\' for their exploits in destroying the Robo-Annihilator.')
+            print(f'As {player_object.ship_name} is pulled by the tractor '
+                  f'beam. Captain {player_object.name} releases the Nuclear '
+                  f'Mines from the cargo hold. The mines are pulled into the '
+                  f'hold of the Robo-Annihilator, causing the dreadnought '
+                  f'to explode in a mushroom cloud. {player_object.ship_name} '
+                  f'just escapes the destruction and after '
+                  f'delivering the superweapon to the Star Republic Navy, '
+                  f'Captain {player_object.name} became '
+                  f'known as the hero \'{player_object.name} the Daring\''
+                  f'for their exploits in destroying the Robo-Annihilator.')
         elif conclusion_number == 5:
-            print(f'Captain {player_object.name} is imprisoned aboard the Robo-Annihilator. '
-                  f'The superweapon is taken and the last thing {player_object.name} sees before they '
-                  f'are executed is the capital world of the Star Republic being destroyed by the '
-                  f'superweapon.')
+            print(f'Captain {player_object.name} is imprisoned aboard the '
+                  f'Robo-Annihilator. The superweapon is taken and the last '
+                  f'thing {player_object.name} sees before they are executed '
+                  f'is the capital world of the Star Republic being destroyed '
+                  f'by the superweapon.')
     return
 
 
 def replay():
-    """Function which is called and asks the player whether they would like to replay
-    the game."""
+    """Function which is called and asks the player whether they would like to 
+    replay the game."""
     print('Would you like to play again?')
     choice = validate_replay_choice()  
     if choice == 'Y':
@@ -367,10 +388,10 @@ def victory(player_object):
     """Function which is called when the player wins the game.
     Allows them to quit or play again and will eventually add to a 
     board in a Google Sheet."""
-    print(f'\n\nWell done Captain {player_object.name}. You have saved the Star Republic!')
+    print(f'\n\nWell done Captain {player_object.name}. You have saved the '
+          'Star Republic!')
     replay()
    
-
 
 def display_options(player_object):
     """Function which is called and displays options to the player based on 
@@ -389,15 +410,29 @@ def scenario_intro(number, player_object):
     is provided to the player depending on how far along the game they 
     are. Moves to victory function if player has completed all scenarios."""
     if number == 1:
-        print('\n\nAs you go to leave Sector A. A large asteroid storm appears! You are about to be caught in the middle of it. What do you do?')
+        print('\n\nAs you go to leave Sector A. A large asteroid storm ' 
+              'appears! You are about to be caught in the middle of it. '
+              'What do you do?')
     elif number == 2:
-        print('\n\nAs you enter Sector B, your ship starts to be pulled in by a supermassive black hole! What do you do?')
+        print('\n\nAs you enter Sector B, your ship starts to be pulled in by '
+              'a supermassive black hole! '
+              'What do you do?')
     elif number == 3:
-        print('\n\nAbout halfway through Sector C. A garbled alien transmission comes through from a spaceship on your radar. You have no idea what they want, but their heat signatures suggest they are powering up their weapons. What do you do?')
+        print('\n\nAbout halfway through Sector C. A garbled alien '
+              'transmission comes through from a spaceship on your radar. '
+              'You have no idea what they want, but their heat signatures '
+              'suggest they are powering up their weapons. What do you do?')
     elif number == 4:
-        print('\n\nAs you enter Sector D, you notice a blockade of Robo-Empire ships. There`s no way you could fight them all. What do you do?')
+        print('\n\nAs you enter Sector D, you notice a blockade of '
+              'Robo-Empire ships. There`s no way you could fight them all. '
+              'What do you do?')
     elif number == 5:
-        print('\n\nUpon arrival in Sector E you see your destination appear after typing in your encrypted password. The end of your journey seems so close now. But out of nowhere the capital ship, the Robo-Annihilator, of the Robo-Empire appears and starts to pull you in with its tractor beam. What do you do?')
+        print('\n\nUpon arrival in Sector E you see your destination appear '
+              'after typing in your encrypted password. The end '
+              'of your journey seems so close now.'
+              'But out of nowhere the capital ship, the Robo-Annihilator, of '
+              'the Robo-Empire appears and starts to pull you in with its '
+              'tractor beam. What do you do?')
     elif number == 6:
         victory(player_object)
 
@@ -411,22 +446,26 @@ def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
     if number_choice == len(player_object.cargo) + 1:
         if player_object.use_fuel():
             scenario_conclusion(player_object, scenario_number, 1)
-            scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO) 
+            scenario_one(player_object, scenario_number + 1, risk_factor + 
+                         0.2, WINNING_CARGO) 
         else:
             scenario_conclusion(player_object, scenario_number, 2)
             game_over(player_object)
     elif number_choice == len(player_object.cargo) + 2:
         if player_object.take_chance(risk_factor):
             scenario_conclusion(player_object, scenario_number, 3)
-            scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO) 
+            scenario_one(player_object, scenario_number + 1, risk_factor + 
+                         0.2, WINNING_CARGO) 
         else:
             scenario_conclusion(player_object, scenario_number, 5)
             game_over(player_object)
     elif number_choice <= len(player_object.cargo):
-        if player_object.cargo[number_choice - 1] == WINNING_CARGO[int(scenario_number)-1]:
+        if player_object.cargo[number_choice - 1] == WINNING_CARGO[int
+           (scenario_number)-1]:
             player_object.cargo.remove(WINNING_CARGO[int(scenario_number)-1])
             scenario_conclusion(player_object, scenario_number, 4)
-            scenario_one(player_object, scenario_number + 1, risk_factor + 0.2, WINNING_CARGO)
+            scenario_one(player_object, scenario_number + 1, risk_factor + 
+                         0.2, WINNING_CARGO)
         else:
             scenario_conclusion(player_object, scenario_number, 5)
             game_over(player_object)
@@ -475,7 +514,7 @@ def confirm_choice(question, details):
     function."""
     while True:
         choice = input(f'Your {question}: {details}. Is this correct?'
-        'Type Y for yes and N for no: ').upper()
+                       'Type Y for yes and N for no: ').upper()
         if choice not in ['Y', 'N']:
             print('Sorry, that choice is not available.')
         elif choice == 'Y':
@@ -503,10 +542,12 @@ def main():
     
     while not cargo_items_correct:
         cargo_items = decide_on_items()
-        cargo_items_correct = confirm_choice('Cargo hold contains these items', cargo_items)
+        cargo_items_correct = confirm_choice('Cargo hold contains these items',
+                                             cargo_items)
     
     main_player = Player(player_name, player_ship_name, cargo_items)
-    WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
+    WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 
+                     'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
     scenario_one(main_player, int(1), float(0.1), WINNING_CARGO)
     
 
