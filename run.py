@@ -12,6 +12,7 @@ def validate_start_menu_option():
     it, check the leaderboard or quit the game.
     Returns number."""
     while True:
+        print('\nWelcome to Star Traveller.\n')
         print('1) Play Star Traveller')
         print('2) Instructions for Star Traveller')
         print('3) Quit Star Traveller')
@@ -25,8 +26,8 @@ def validate_start_menu_option():
 
 
 def start_menu():
-    """Gives the player the options of playing the game, 
-    reading the instructions for how the game is 
+    """Gives the player the options of playing the game,
+    reading the instructions for how the game is
     played, checking the 'leaderboard' or quitting the game.
     """
     while True:
@@ -41,14 +42,14 @@ def start_menu():
 
 
 def instructions():
-    """Gives the player instructions on how 
+    """Gives the player instructions on how
     to play the game. Returns nothing."""
-    print('In Star Traveller, you must choose the name of your '
+    print('\nIn Star Traveller, you must choose the name of your\n'
           'captain, the name of your ship and choose a collection of useful '
-          'items to hold in your cargo. You will then have to navigate a '
-          'series of scenarios, choosing to burn precious fuel, use up your '
+          'items to hold in your cargo.\nYou will then have to navigate a '
+          'series of scenarios, choosing to burn precious fuel,\nuse up your '
           'item collection or take increasingly dangerous risks to progress. '
-          'If you fail a scenario, you will get a game over. The game is '
+          '\nIf you fail a scenario, you will get a game over.\nThe game is '
           'played by inputting numbers or letters or strings of text when '
           'prompted by the text on screen.')
 
@@ -63,7 +64,7 @@ def introduction():
     print('You will face many perils on your way there, but the Star Republic '
           'is relying on you!')
     print('\n\n\n')
-            
+
 
 def validate_initial_cargo_choices(potential_cargo):
     """Validates the initial cargo choices.
@@ -447,7 +448,7 @@ def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
         if player_object.use_fuel():
             scenario_conclusion(player_object, scenario_number, 1)
             scenario_one(player_object, scenario_number + 1, risk_factor + 
-                         0.2, WINNING_CARGO) 
+                         2, WINNING_CARGO) 
         else:
             scenario_conclusion(player_object, scenario_number, 2)
             game_over(player_object)
@@ -455,7 +456,7 @@ def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
         if player_object.take_chance(risk_factor):
             scenario_conclusion(player_object, scenario_number, 3)
             scenario_one(player_object, scenario_number + 1, risk_factor + 
-                         0.2, WINNING_CARGO) 
+                         2, WINNING_CARGO) 
         else:
             scenario_conclusion(player_object, scenario_number, 5)
             game_over(player_object)
@@ -465,7 +466,7 @@ def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
             player_object.cargo.remove(WINNING_CARGO[int(scenario_number)-1])
             scenario_conclusion(player_object, scenario_number, 4)
             scenario_one(player_object, scenario_number + 1, risk_factor + 
-                         0.2, WINNING_CARGO)
+                         2, WINNING_CARGO)
         else:
             scenario_conclusion(player_object, scenario_number, 5)
             game_over(player_object)
@@ -499,8 +500,9 @@ class Player:
         """Takes a factor and returns a True or
         False as to whether the ship survived the
         risky maneuver taken"""
-        floating_num = random.random()
-        if floating_num >= factor:
+        num = random.randint(1, 10)
+        print(num)
+        if num >= factor:
             return True
         else:
             return False
@@ -548,7 +550,7 @@ def main():
     main_player = Player(player_name, player_ship_name, cargo_items)
     WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 
                      'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
-    scenario_one(main_player, int(1), float(0.1), WINNING_CARGO)
+    scenario_one(main_player, int(1), int(1), WINNING_CARGO)
     
 
 main()
