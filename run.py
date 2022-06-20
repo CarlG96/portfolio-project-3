@@ -72,14 +72,17 @@ def validate_initial_cargo_choices(potential_cargo):
     Returns choice."""
     while True:
         try:
-            number = int(input('Choose which item you want by typing in the number: ')) -1
+            number = int(input('Choose which item you want by typing in the '
+                               'number: ')) - 1
             if number > len(potential_cargo) or number < 0:
                 raise IndexError()
             return number
         except ValueError:
             print('Please type your option as an available number.')
         except IndexError: 
-            print(f'Please choose options between 1 and {len(potential_cargo)}.')
+            print(f'Please choose options between 1 and '
+                  f'{len(potential_cargo)}.')
+
 
 def validate_replay_choice():
     """Validates whether the player has chosen either 'Y' or 'N' 
@@ -92,46 +95,55 @@ def validate_replay_choice():
         else:
             return replay_choice
 
+
 def validate_scenario_choice(player_object):
     """Validates the player's scenario choice.
     Check's for Value or Index Error. Returns
     integer for scenario choice."""
     while True:
         try:
-            number = int(input('\nPlease choose an option using the numbers provided: '))
+            number = int(input('\nPlease choose an option using the numbers '
+                               'provided: '))
             if number > len(player_object.cargo) + 2 or number < 1:
                 raise IndexError()
             return number
         except ValueError:
             print('Please type your option as an available number.')
         except IndexError: 
-            print(f'Please choose options between 1 and {len(player_object.cargo) +2}.')
-
+            print(f'Please choose options between 1 and '
+                  f'{len(player_object.cargo) +2}.')
 
 
 def get_name(name_in_question):
     """Validates the user's name for captain and ship and returns the name"""
     while True:
         try:
-            name = ((input(f'What is your {name_in_question}, captain? ')).strip()).capitalize()
+            name = ((input(f'What is your {name_in_question}, captain? '))
+                    .strip()).capitalize()
             if len(name) > 15 or len(name) < 4:
                 raise ValueError()
             if name_in_question == 'ship name':
                 name = 'the ' + name
             return name
         except ValueError:
-            print(f'{name_in_question} must be between 4 and 15 characters including spaces.')
+            print(f'{name_in_question} must be between 4 and 15 characters '
+                  'including spaces.')
 
 
 def decide_on_items():
-    """User chooses 3 of 5 items. Function returns a list of these three items."""
-    print('\nOn your journey you will need to take some items for perilous situations.')
-    potential_cargo_items = ['Temporary Force Shield', 'Anti-Gravity Device', 'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
+    """User chooses 3 of 5 items. Function returns a list of these 
+    three items."""
+    print('\nOn your journey you will need to take some items for perilous '
+          'situations.')
+    potential_cargo_items = ['Temporary Force Shield', 'Anti-Gravity Device', 
+                             'Galactic Translator', 'Cloaking Device', 
+                             'Nuclear Mines']
     cargo = []
     j = 1
     while j < 4:
         print('\nHere are the list of items you can still take: ')
-        for potential_cargo_item, i in zip(potential_cargo_items, range(len(potential_cargo_items))):
+        for potential_cargo_item, i in zip(potential_cargo_items, 
+                                           range(len(potential_cargo_items))):
             print(f'{i + 1}) {potential_cargo_item}')
         cargo_choice = validate_initial_cargo_choices(potential_cargo_items) 
         cargo.append(potential_cargo_items[cargo_choice])
@@ -140,10 +152,11 @@ def decide_on_items():
 
     print('You have these items: ')
     k = 1
-    for carg in cargo:
-        print(f'{k}) {carg}')
+    for item in cargo:
+        print(f'{k}) {item}')
         k += 1
     return cargo
+
 
 def scenario_conclusion(player_object, scenario, conclusion_number):
     """Function which takes in argument for which 
@@ -155,45 +168,48 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
         if conclusion_number == 1:
             print('\n')
             print(f'{player_object.name} uses extra fuel to accelerate '
-            f'{player_object.ship_name} out of the way before the '
-            f'asteroid storm hits. {player_object.name} makes the '
-            'hyperspace jump to Sector B.')
+                  f'{player_object.ship_name} out of the way before the '
+                  f'asteroid storm hits. {player_object.name} makes the '
+                  'hyperspace jump to Sector B.')
         elif conclusion_number == 2:
             raise IndexError('This shouldn\'t be possible in the first '
-            'scenario as the player\'s fuel can\'t decrease this low '
-            'in the first scenario.')
+                             'scenario as the player\'s fuel can\'t decrease '
+                             'this low in the first scenario.')
         elif conclusion_number == 3:
             print('\n')
             print(f'Captain {player_object.name} masterfully pilots '
-            f'{player_object.ship_name} through the asteroid storm, '
-            'performing incredibly risky maneuvers that push their '
-            'skills to the limit. Having survived this, '
-            f'Captain {player_object.name} makes the hyperspace jump to '
-            'Sector B.')
+                  f'{player_object.ship_name} through the asteroid storm, '
+                  'performing incredibly risky maneuvers that push their '
+                  'skills to the limit. Having survived this, '
+                  f'Captain {player_object.name} makes the hyperspace jump to '
+                  'Sector B.')
         elif conclusion_number == 4:
             print('\n')
-            print(f'Captain {player_object.name} activates the Temporary Force '
-            'Shield they took in the cargo. A kinetic barrier '
-            f'envelops {player_object.ship_name}, allowing it to '
-            'safely traverse the asteroid storm. Feeling rather lucky; '
-            f'Captain {player_object.name} makes the hyperspace jump to Sector B.')
+            print(f'Captain {player_object.name} activates the Temporary Force'
+                  ' Shield they took in the cargo. A kinetic barrier '
+                  f'envelops {player_object.ship_name}, allowing it to '
+                  'safely traverse the asteroid storm. Feeling rather lucky; '
+                  f'Captain {player_object.name} makes the hyperspace jump to '
+                  'Sector B.')
         elif conclusion_number == 5:
             print('\n')
             print('One after another, asteroids crash into the side of '
-            f'{player_object.ship_name}. The hull is eventually breached '
-            f'and Captain {player_object.name} is left to the mercy of cold space.')
+                  f'{player_object.ship_name}. The hull is eventually '
+                  f'breached and Captain {player_object.name} is left to the '
+                  'mercy of cold space.')
     elif scenario == 2:
         if conclusion_number == 1:
             print('\n')
             print(f'Switching on {player_object.ship_name}\'s afterburners, '
-            f'Captain {player_object.name} burns some of the additional fuel '
-            'to make sure they aren\'t pulled into the black hole\'s '
-            f'event horizon. Breathing a sigh of relief, Captain {player_object.name} '
-            'makes the hyperspace jump to Sector C.')
+                  f'Captain {player_object.name} burns some of the additional '
+                  'fuel to make sure they aren\'t pulled into the black '
+                  f'hole\'s event horizon. Breathing a sigh of relief, '
+                  f'Captain {player_object.name} makes the hyperspace jump to '
+                  'Sector C.')
         elif conclusion_number == 2:
             raise IndexError('This shouldn\'t be possible in the first '
-            'scenario as the player\'s fuel can\'t decrease this low '
-            'in the second scenario.')
+                             'scenario as the player\'s fuel can\'t decrease '
+                             'this lowin the second scenario.')
         elif conclusion_number == 3:
             print('\n')
             print(f'Captain {player_object.name} directs {player_object.ship_name} '
