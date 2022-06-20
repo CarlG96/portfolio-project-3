@@ -12,7 +12,7 @@ def validate_start_menu_option():
     it, check the leaderboard or quit the game.
     Returns number."""
     while True:
-        print('\nWelcome to Star Traveller.\n')
+        print('\nWelcome to Star Traveller!\n')
         print('1) Play Star Traveller')
         print('2) Instructions for Star Traveller')
         print('3) Quit Star Traveller')
@@ -104,14 +104,13 @@ def validate_scenario_choice(player_object):
         try:
             number = int(input('\nPlease choose an option using the numbers '
                                'provided: '))
-            if number > len(player_object.cargo) + 2 or number < 1:
-                raise IndexError()
-            return number
+            if number not in range(1, len(player_object.cargo) + 2):
+                print(f'Please choose options between 1 and '
+                      f'{len(player_object.cargo) +2}.')
+            else:
+                return number
         except ValueError:
             print('Please type your option as an available number.')
-        except IndexError: 
-            print(f'Please choose options between 1 and '
-                  f'{len(player_object.cargo) +2}.')
 
 
 def get_name(name_in_question):
