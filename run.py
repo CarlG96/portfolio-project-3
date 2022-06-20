@@ -117,17 +117,15 @@ def validate_scenario_choice(player_object):
 def get_name(name_in_question):
     """Validates the user's name for captain and ship and returns the name"""
     while True:
-        try:
-            name = ((input(f'What is your {name_in_question}, captain? '))
-                    .strip()).capitalize()
-            if len(name) > 15 or len(name) < 4:
-                raise ValueError()
+        name = ((input(f'What is your {name_in_question}, captain? '))
+                .strip()).capitalize()
+        if len(name) > 15 or len(name) < 4 or not(name.isalnum()):
+            print(f'{name_in_question.capitalize()} must be between 4 and 15 '
+                  'alphanumeric characters without spaces.')
+        else:
             if name_in_question == 'ship name':
                 name = 'the ' + name
             return name
-        except ValueError:
-            print(f'{name_in_question} must be between 4 and 15 characters '
-                  'including spaces.')
 
 
 def decide_on_items():
@@ -515,7 +513,7 @@ def confirm_choice(question, details):
     either True or False to break each while loop in the main 
     function."""
     while True:
-        choice = input(f'Your {question}: {details}. Is this correct?'
+        choice = input(f'Your {question}: {details}. Is this correct? '
                        'Type Y for yes and N for no: ').upper()
         if choice not in ['Y', 'N']:
             print('Sorry, that choice is not available.')
@@ -534,12 +532,10 @@ def main():
     cargo_items_correct = False
     while not name_correct:
         player_name = get_name("name")
-        print(f'Hello, {player_name}.')
         name_correct = confirm_choice('Captain\'s name is', player_name)
 
     while not ship_name_correct:
         player_ship_name = get_name("ship name")
-        print(f'Your ship is called {player_ship_name}.')
         ship_name_correct = confirm_choice('Ship\'s name is', player_ship_name)
     
     while not cargo_items_correct:
