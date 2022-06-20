@@ -1,8 +1,10 @@
 import random
 
+
 def quit_out():
     print('Thanks for playing Star Traveller!')
     quit()
+
 
 def validate_start_menu_option():
     """Validates whether the player wants to
@@ -16,8 +18,9 @@ def validate_start_menu_option():
         
         number = (input('\nChoose which option you want by typing the '
                   'corresponding number.'))
-        if number not in ['1','2','3']:
-            print('Invalid choice option. Please input a number between 1 and 3.')
+        if number not in ['1', '2', '3']:
+            print('Invalid choice option. Please input a number between 1 and '
+                  '3.')
         else:
             return number
         
@@ -42,21 +45,24 @@ def instructions():
     """Gives the player instructions on how 
     to play the game. Returns nothing."""
     print('In Star Traveller, you must choose the name of your '
-    'captain, the name of your ship and choose a collection of useful '
-    'items to hold in your cargo. You will then have to navigate a series '
-    'scenarios, choosing to burn precious fuel, use up your item collection '
-    'or take increasingly dangerous risks to progress. If you fail '
-    'a scenario, you will get a game over. The game is played by inputting '
-    'numbers or letters or strings of text when prompted by the text on screen.')
+          'captain, the name of your ship and choose a collection of useful '
+          'items to hold in your cargo. You will then have to navigate a '
+          'series of scenarios, choosing to burn precious fuel, use up your '
+          'item collection or take increasingly dangerous risks to progress. '
+          'If you fail a scenario, you will get a game over. The game is '
+          'played by inputting numbers or letters or strings of text when '
+          'prompted by the text on screen.')
 
 
 def introduction():
     """Introduces the user to the game."""
     print('\n\nWelcome to Star Traveller!')
     print('You are a captain of the Star Republic Navy.')
-    print('You have been tasked with delivering a superweapon from Sector A to Sector E.')
+    print('You have been tasked with delivering a superweapon from Sector A '
+          'to Sector E.')
     print('This will allow the Star Republic to defeat the Robo-Empire.')
-    print('You will face many perils on your way there, but the Star Republic is relying on you!')
+    print('You will face many perils on your way there, but the Star Republic '
+          'is relying on you!')
     print('\n\n\n')
             
 
