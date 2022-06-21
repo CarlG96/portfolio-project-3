@@ -58,7 +58,7 @@ def instructions():
 
 def introduction():
     """Introduces the user to the game if 
-    they have chosen to play it."""
+    they have chosen to play"""
     print('\n\nWelcome to Star Traveller!')
     print('You are a captain of the Star Republic Navy.')
     print('You have been tasked with delivering a superweapon from Sector A '
@@ -71,19 +71,20 @@ def introduction():
 
 def validate_initial_cargo_choices(potential_cargo):
     """Validates the initial cargo choices.
-    Makess sure there are no value or index errors.
-    Returns choice as a number."""
+    Makess sure they are not value or index errors.
+    Returns choice."""
     while True:
         try:
             number = int(input('\nChoose which item you want by typing in the '
                                'number:\n')) - 1
-            if number > len(potential_cargo) or number < 0:
+            if number not in range(0, len(potential_cargo)):
                 print(f'Please choose options between 1 and '
                       f'{len(potential_cargo)}.')
             else:
                 return number
         except ValueError:
             print('Please type your option as an available number.')
+        
 
 
 def validate_replay_choice():
