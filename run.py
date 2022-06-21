@@ -63,7 +63,7 @@ def introduction():
     print('This will allow the Star Republic to defeat the Robo-Empire.')
     print('You will face many perils on your way there, but the Star Republic '
           'is relying on you!')
-    print('\n\n\n')
+    print('\n')
 
 
 def validate_initial_cargo_choices(potential_cargo):
@@ -72,7 +72,7 @@ def validate_initial_cargo_choices(potential_cargo):
     Returns choice."""
     while True:
         try:
-            number = int(input('Choose which item you want by typing in the '
+            number = int(input('\nChoose which item you want by typing in the '
                                'number: ')) - 1
             if number > len(potential_cargo) or number < 0:
                 raise IndexError()
@@ -116,7 +116,7 @@ def validate_scenario_choice(player_object):
 def get_name(name_in_question):
     """Validates the user's name for captain and ship and returns the name"""
     while True:
-        name = ((input(f'What is your {name_in_question}, captain? '))
+        name = ((input(f'\nWhat is your {name_in_question}, captain? '))
                 .strip()).capitalize()
         if len(name) > 15 or len(name) < 4 or not(name.isalnum()):
             print(f'{name_in_question.capitalize()} must be between 4 and 15 '
@@ -138,7 +138,7 @@ def decide_on_items():
     cargo = []
     j = 1
     while j < 4:
-        print('\nHere are the list of items you can still take: ')
+        print('\nHere are the list of items you can still take:\n')
         for potential_cargo_item, i in zip(potential_cargo_items, 
                                            range(len(potential_cargo_items))):
             print(f'{i + 1}) {potential_cargo_item}')
@@ -147,11 +147,6 @@ def decide_on_items():
         potential_cargo_items.remove(potential_cargo_items[cargo_choice])
         j += 1
 
-    print('You have these items: ')
-    k = 1
-    for item in cargo:
-        print(f'{k}) {item}')
-        k += 1
     return cargo
 
 
@@ -512,7 +507,7 @@ def confirm_choice(question, details):
     either True or False to break each while loop in the main 
     function."""
     while True:
-        choice = input(f'Your {question}: {details}. Is this correct? '
+        choice = input(f'\nYour {question}: {details}.\nIs this correct? '
                        'Type Y for yes and N for no: ').upper()
         if choice not in ['Y', 'N']:
             print('Sorry, that choice is not available.')
