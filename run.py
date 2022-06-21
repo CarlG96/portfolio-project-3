@@ -483,7 +483,8 @@ def scenario_call(player_object, scenario_number, risk_factor, WINNING_CARGO):
 
 class Player:
     """Creates an instance of the player 
-    from what the player has inputted"""
+    from what the player has inputted as name,
+    ship name and cargp"""
     def __init__(self, name, ship_name, cargo):
         self.name = name
         self.ship_name = ship_name
@@ -492,7 +493,7 @@ class Player:
 
     def use_fuel(self):
         """Removes one fuel from the 
-        ship in order to get past an objective"""
+        ship in order to get past an objective."""
         self.fuel -= 1
         if self.fuel >= 0:
             return True
@@ -501,16 +502,15 @@ class Player:
 
     def use_cargo(self, cargo_item):
         """Uses a cargo item and removes
-        it from the ship's cargo"""
+        it from the ship's cargo."""
         self.cargo.remove(self.cargo[int(cargo_item)-1]) 
         # Need checking for this function
 
     def take_chance(self, factor):
         """Takes a factor and returns a True or
         False as to whether the ship survived the
-        risky maneuver taken"""
+        risky maneuver taken."""
         num = random.randint(1, 10)
-        print(num)
         if num >= factor:
             return True
         else:
