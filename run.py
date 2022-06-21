@@ -2,6 +2,8 @@ import random
 
 
 def quit_out():
+    """Thank the player for playing and 
+    then quits the application"""
     print('Thanks for playing Star Traveller!')
     quit()
 
@@ -9,8 +11,8 @@ def quit_out():
 def validate_start_menu_option():
     """Validates whether the player wants to
     play Star Traveller, see the instructions for
-    it, check the leaderboard or quit the game.
-    Returns number."""
+    it or quit the game. Also validates the choice.
+    Returns number of the choice."""
     while True:
         print('\nWelcome to Star Traveller!\n')
         print('1) Play Star Traveller')
@@ -28,7 +30,7 @@ def validate_start_menu_option():
 def start_menu():
     """Gives the player the options of playing the game,
     reading the instructions for how the game is
-    played, checking the 'leaderboard' or quitting the game.
+    played or quitting the game.
     """
     while True:
         option = validate_start_menu_option()
@@ -55,7 +57,8 @@ def instructions():
 
 
 def introduction():
-    """Introduces the user to the game."""
+    """Introduces the user to the game if 
+    they have chosen to play it."""
     print('\n\nWelcome to Star Traveller!')
     print('You are a captain of the Star Republic Navy.')
     print('You have been tasked with delivering a superweapon from Sector A '
@@ -68,20 +71,19 @@ def introduction():
 
 def validate_initial_cargo_choices(potential_cargo):
     """Validates the initial cargo choices.
-    Makess sure they are not value or index errors.
-    Returns choice."""
+    Makess sure there are no value or index errors.
+    Returns choice as a number."""
     while True:
         try:
             number = int(input('\nChoose which item you want by typing in the '
                                'number:\n')) - 1
             if number > len(potential_cargo) or number < 0:
-                raise IndexError()
-            return number
+                print(f'Please choose options between 1 and '
+                      f'{len(potential_cargo)}.')
+            else:
+                return number
         except ValueError:
             print('Please type your option as an available number.')
-        except IndexError: 
-            print(f'Please choose options between 1 and '
-                  f'{len(potential_cargo)}.')
 
 
 def validate_replay_choice():
