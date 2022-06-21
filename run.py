@@ -104,7 +104,7 @@ def validate_scenario_choice(player_object):
         try:
             number = int(input('\nPlease choose an option using the numbers '
                                'provided:\n'))
-            if number not in range(1, len(player_object.cargo) + 2):
+            if number not in range(1, len(player_object.cargo) + 3):
                 print(f'Please choose options between 1 and '
                       f'{len(player_object.cargo) +2}.')
             else:
