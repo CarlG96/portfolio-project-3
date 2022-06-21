@@ -206,16 +206,18 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
             print('\n')
             print(f'Captain {player_object.name} directs '
                   f'{player_object.ship_name} on a course\nso that it will '
-                  'approach the black hole\'s orbit at a tangent,\ncatapulting '
+                  'approach the black hole\'s orbit at a '
+                  'tangent,\ncatapulting '
                   f'the ship out of the black hole\'s gravity well.\n'
                   f'{player_object.ship_name} is launched across the solar '
-                  f'system\nbut Captain {player_object.name}\'s quick thinking '
-                  f'has saved them.\nCaptain {player_object.name} makes the '
-                  'hyperspace jump to Sector C.')
+                  f'system\nbut Captain {player_object.name}\'s quick '
+                  f'thinking has saved them.\nCaptain {player_object.name} '
+                  'makes the hyperspace jump to Sector C.')
         elif conclusion_number == 4:
             print('\n')
             print(f'Captain {player_object.name} switches on the Anti-Gravity '
-                  f'Device in {player_object.ship_name}\'s cargo.\nThis causes '
+                  f'Device in {player_object.ship_name}\'s cargo.\nThis '
+                  'causes '
                   f'{player_object.ship_name} to be propelled away from the '
                   f'black hole instead of towards it.\nCaptain '
                   f'{player_object.name} makes the hyperspace jump to '
@@ -231,7 +233,8 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
         if conclusion_number == 1:
             print('\n')
             print(f'Captain {player_object.name} uses '
-                  f'{player_object.ship_name}\'s fuel reserves,\nflying it out '
+                  f'{player_object.ship_name}\'s fuel reserves,\nflying it '
+                  'out '
                   f'of range of the aliens\' antiquated weapon systems.\n'
                   f'Captain {player_object.name} makes a safe hyperspace jump '
                   'to Sector D.')
@@ -240,13 +243,15 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
             print(f'Captain {player_object.name} tries to use '
                   f'{player_object.ship_name}\'s fuel reserves\nto fly out of '
                   f'range of the alien\' weapon systems,\nbut they find there '
-                  f'is no more reserve.\n"If only I\'d taken more fuel" is the '
+                  f'is no more reserve.\n"If only I\'d taken more fuel" is '
+                  'the '
                   f'last thought to pass\ninto {player_object.name}\'s head '
                   f'before {player_object.ship_name} explodes.')
         elif conclusion_number == 3:
             print('\n')
             print(f'Captain {player_object.name} realises '
-                  f'{player_object.ship_name} is\nfar superior to the aliens\' '
+                  f'{player_object.ship_name} is\nfar superior to the '
+                  'aliens\' '
                   f'ships.\nCaptain {player_object.name} powers up '
                   f'{player_object.ship_name}\'s weapon systems\nand fires '
                   f'before the aliens have a chance to power up their own,'
@@ -255,7 +260,8 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
         elif conclusion_number == 4:
             print('\n')
             print(f'Turning on the Galactic Translator, Captain '
-                  f'{player_object.name} speaks with the aliens.\nIt turns out '
+                  f'{player_object.name} speaks with the aliens.\nIt turns '
+                  'out '
                   f'they are the Bug People from Sector X, and have mistaken '
                   f'you for an agent of the Robo-Empire.\nAfter clearing up '
                   f'the misunderstanding, {player_object.name} makes a quick '
@@ -263,7 +269,8 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
         elif conclusion_number == 5:
             print('\n')
             print(f'Captain {player_object.name} attempts to answer the '
-                  f'transmission in all the space languages they know,\nbut no '
+                  f'transmission in all the space languages they know,\nbut '
+                  'no '
                   f'answer comes back.\nThe aliens power up their weapon '
                   f'systems and their turbo lasers destroy '
                   f'{player_object.ship_name}.')
@@ -279,7 +286,8 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
         elif conclusion_number == 2:
             print('\n')
             print(f'Captain {player_object.name} attempts to move quickly to '
-                  f'hide from the blockade behind a planet\'s rings,\nbut just '
+                  f'hide from the blockade behind a planet\'s rings,\nbut '
+                  'just '
                   f'when they want to tap into the fuel reserves, they '
                   f'realise there are none left.\n{player_object.ship_name} '
                   f'drifts into view of the blockade after several minutes,\n'
@@ -292,7 +300,8 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
                   f'blockade\'s missiles, only to fly '
                   f'{player_object.ship_name} close to the blockade,\ncausing '
                   'the missiles to '
-                  f'destroy the blockade itself!\nCaptain {player_object.name} '
+                  f'destroy the blockade itself!\nCaptain '
+                  f'{player_object.name} '
                   f'passes the destroyed blockade and hyperspace jumps '
                   f'to Sector E.')
         elif conclusion_number == 4:
@@ -307,7 +316,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
         elif conclusion_number == 5:
             print('\n')
             print(f'A barrage of homing missiles fly towards '
-                  f'{player_object.ship_name}.\n{player_object.name}\'s pilot  '
+                  f'{player_object.ship_name}.\n{player_object.name}\'s pilot '
                   f'skills are no match for the missiles\'s '
                   f'ability to turn on a whim,\n'
                   f'and {player_object.ship_name} is destroyed in '
@@ -315,7 +324,8 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
     elif scenario == 5:
         if conclusion_number == 1:
             print(f'Using the last of {player_object.ship_name}\'s fuel '
-                  f'reserve,\nCaptain {player_object.name} causes the force of '
+                  f'reserve,\nCaptain {player_object.name} causes the force '
+                  'of '
                   f'the ship to overpower the Robo-Annihilator\'s tractor '
                   f'beam;\nescaping from the Robo-Annihilator.\nCaptain '
                   f'{player_object.name} delivers the superweapon to the Star '
@@ -329,8 +339,8 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
                   'Star Republic.')
         elif conclusion_number == 3:
             print(f'Captain {player_object.name} allows themselves to be '
-                  f'taken aboard theRobo-Annihilator.\nInside, they pull out a '
-                  'concealed '
+                  f'taken aboard theRobo-Annihilator.\nInside, they pull out '
+                  'a concealed '
                   f'laser pistol and kill the Robo-Guards,\nrunning through '
                   f'the ship before activating its self-destruct button.\n'
                   f'Captain {player_object.name} '
@@ -344,8 +354,9 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
                   f'beam.\nCaptain {player_object.name} releases the Nuclear '
                   f'Mines from the cargo hold.\nThe mines are pulled into the '
                   f'hold of the Robo-Annihilator, causing the dreadnought '
-                  f'to explode in a mushroom cloud.\n{player_object.ship_name} '
-                  f'just escapes the destruction and after '
+                  f'to explode in a mushroom cloud.'
+                  f'\n{player_object.ship_name} just escapes the destruction '
+                  'and after'
                   f'delivering the superweapon to the Star Republic Navy,\n'
                   f'Captain {player_object.name} became '
                   f'known as the hero \'{player_object.name} the Daring\'\n'
