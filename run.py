@@ -71,8 +71,8 @@ def introduction():
 
 def validate_initial_cargo_choices(potential_cargo):
     """Validates the initial cargo choices.
-    Makess sure they are not value or index errors.
-    Returns choice."""
+    Makes sure there are no value or index errors.
+    Returns choice as a number."""
     while True:
         try:
             number = int(input('\nChoose which item you want by typing in the '
@@ -85,7 +85,6 @@ def validate_initial_cargo_choices(potential_cargo):
         except ValueError:
             print('Please type your option as an available number.')
         
-
 
 def validate_replay_choice():
     """Validates whether the player has chosen either 'Y' or 'N' 
@@ -117,7 +116,8 @@ def validate_scenario_choice(player_object):
 
 
 def get_name(name_in_question):
-    """Validates the user's name for captain and ship and returns the name"""
+    """Validates the user's name for captain or ship
+    depending on argument provided and returns the name."""
     while True:
         name = ((input(f'\nWhat is your {name_in_question}, captain?\n'))
                 .strip()).capitalize()
@@ -131,7 +131,7 @@ def get_name(name_in_question):
 
 
 def decide_on_items():
-    """User chooses 3 of 5 items. Function returns a list of these 
+    """User chooses 3 of 5 items. Returns a list of these 
     three items."""
     print('\nOn your journey you will need to take some items for perilous '
           'situations.')
@@ -386,15 +386,16 @@ def replay():
 
 def game_over(player_object):
     """Function which is called when the player loses the
-    game. Allows them to quit or play again."""
+    game. Allows them to quit or play again by calling
+    replay function."""
     print(f'\n\nCaptain {player_object.name} has died.')
     replay()
 
 
 def victory(player_object):
     """Function which is called when the player wins the game.
-    Allows them to quit or play again and will eventually add to a 
-    board in a Google Sheet."""
+    Allows them to quit or play again by calling replay 
+    function."""
     print(f'\n\nWell done Captain {player_object.name}. You have saved the '
           'Star Republic!')
     replay()
@@ -402,7 +403,8 @@ def victory(player_object):
 
 def display_options(player_object):
     """Function which is called and displays options to the player based on 
-    their current cargo"""
+    their current cargo. Also displays class methods that the player
+    can call upon."""
     i = 1
     for cargo_item in player_object.cargo:
         print(f'{i}) Use {cargo_item}.')
@@ -444,25 +446,26 @@ def scenario_intro(number, player_object):
         victory(player_object)
 
 
-def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
+def scenario_call(player_object, scenario_number, risk_factor, WINNING_CARGO):
     """Function for calling the first scenario 
-    for the player."""
+    for the player. Also calls itself when a scenario is 
+    completed successfully."""
     scenario_intro(int(scenario_number), player_object)
     display_options(player_object)
     number_choice = validate_scenario_choice(player_object) 
     if number_choice == len(player_object.cargo) + 1:
         if player_object.use_fuel():
             scenario_conclusion(player_object, scenario_number, 1)
-            scenario_one(player_object, scenario_number + 1, risk_factor + 
-                         2, WINNING_CARGO) 
+            scenario_call(player_object, scenario_number + 1, risk_factor + 
+                          2, WINNING_CARGO) 
         else:
             scenario_conclusion(player_object, scenario_number, 2)
             game_over(player_object)
     elif number_choice == len(player_object.cargo) + 2:
         if player_object.take_chance(risk_factor):
             scenario_conclusion(player_object, scenario_number, 3)
-            scenario_one(player_object, scenario_number + 1, risk_factor + 
-                         2, WINNING_CARGO) 
+            scenario_call(player_object, scenario_number + 1, risk_factor + 
+                          2, WINNING_CARGO) 
         else:
             scenario_conclusion(player_object, scenario_number, 5)
             game_over(player_object)
@@ -471,8 +474,8 @@ def scenario_one(player_object, scenario_number, risk_factor, WINNING_CARGO):
            (scenario_number)-1]:
             player_object.cargo.remove(WINNING_CARGO[int(scenario_number)-1])
             scenario_conclusion(player_object, scenario_number, 4)
-            scenario_one(player_object, scenario_number + 1, risk_factor + 
-                         2, WINNING_CARGO)
+            scenario_call(player_object, scenario_number + 1, risk_factor + 
+                          2, WINNING_CARGO)
         else:
             scenario_conclusion(player_object, scenario_number, 5)
             game_over(player_object)
@@ -554,7 +557,7 @@ def main():
     main_player = Player(player_name, player_ship_name, cargo_items)
     WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 
                      'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
-    scenario_one(main_player, int(1), int(1), WINNING_CARGO)
+    scenario_call(main_player, int(1), int(1), WINNING_CARGO)
     
 
 main()
