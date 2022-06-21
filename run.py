@@ -17,7 +17,7 @@ def validate_start_menu_option():
         print('2) Instructions for Star Traveller')
         print('3) Quit Star Traveller')
         number = (input('\nChoose which option you want by typing the '
-                  'corresponding number.'))
+                  'corresponding number.\n'))
         if number not in ['1', '2', '3']:
             print('Invalid choice option. Please input a number between 1 and '
                   '3.')
@@ -73,7 +73,7 @@ def validate_initial_cargo_choices(potential_cargo):
     while True:
         try:
             number = int(input('\nChoose which item you want by typing in the '
-                               'number: ')) - 1
+                               'number:\n')) - 1
             if number > len(potential_cargo) or number < 0:
                 raise IndexError()
             return number
@@ -89,7 +89,7 @@ def validate_replay_choice():
     for their choice in the replay function. Returns the player's
     choice."""
     while True:
-        replay_choice = input('Type Y for yes and N for no: ').upper()
+        replay_choice = input('Type Y for yes and N for no:\n').upper()
         if replay_choice not in ['Y', 'N']:
             print('Sorry, that choice is not available.')
         else:
@@ -103,7 +103,7 @@ def validate_scenario_choice(player_object):
     while True:
         try:
             number = int(input('\nPlease choose an option using the numbers '
-                               'provided: '))
+                               'provided:\n'))
             if number not in range(1, len(player_object.cargo) + 2):
                 print(f'Please choose options between 1 and '
                       f'{len(player_object.cargo) +2}.')
@@ -116,7 +116,7 @@ def validate_scenario_choice(player_object):
 def get_name(name_in_question):
     """Validates the user's name for captain and ship and returns the name"""
     while True:
-        name = ((input(f'\nWhat is your {name_in_question}, captain? '))
+        name = ((input(f'\nWhat is your {name_in_question}, captain?\n'))
                 .strip()).capitalize()
         if len(name) > 15 or len(name) < 4 or not(name.isalnum()):
             print(f'{name_in_question.capitalize()} must be between 4 and 15 '
@@ -519,7 +519,7 @@ def confirm_choice(question, details):
     function."""
     while True:
         choice = input(f'\nYour {question}: {details}.\nIs this correct? '
-                       'Type Y for yes and N for no: ').upper()
+                       'Type Y for yes and N for no:\n').upper()
         if choice not in ['Y', 'N']:
             print('Sorry, that choice is not available.')
         elif choice == 'Y':
