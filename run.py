@@ -30,8 +30,8 @@ def validate_start_menu_option():
 def main():
     """Gives the player the options of playing the game,
     reading the instructions for how the game is
-    played or quitting the game.
-    """
+    played or quitting the game. First function to be
+    called."""
     while True:
         option = validate_start_menu_option()
 
@@ -447,6 +447,13 @@ def scenario_intro(number, player_object):
         victory(player_object)
 
 
+def move_on():
+    """Function that pauses the game, waits for 
+    any input then continues when that input is delivered."""
+    input('\nPress any button to continue.\n')
+    return
+
+
 def scenario_call(player_object, scenario_number, risk_factor, WINNING_CARGO):
     """Function for calling the first scenario 
     for the player. Also calls itself when a scenario is 
@@ -457,6 +464,7 @@ def scenario_call(player_object, scenario_number, risk_factor, WINNING_CARGO):
     if number_choice == len(player_object.cargo) + 1:
         if player_object.use_fuel():
             scenario_conclusion(player_object, scenario_number, 1)
+            move_on()
             scenario_call(player_object, scenario_number + 1, risk_factor + 
                           2, WINNING_CARGO) 
         else:
@@ -465,6 +473,7 @@ def scenario_call(player_object, scenario_number, risk_factor, WINNING_CARGO):
     elif number_choice == len(player_object.cargo) + 2:
         if player_object.take_chance(risk_factor):
             scenario_conclusion(player_object, scenario_number, 3)
+            move_on()
             scenario_call(player_object, scenario_number + 1, risk_factor + 
                           2, WINNING_CARGO) 
         else:
@@ -475,6 +484,7 @@ def scenario_call(player_object, scenario_number, risk_factor, WINNING_CARGO):
            (scenario_number)-1]:
             player_object.cargo.remove(WINNING_CARGO[int(scenario_number)-1])
             scenario_conclusion(player_object, scenario_number, 4)
+            move_on()
             scenario_call(player_object, scenario_number + 1, risk_factor + 
                           2, WINNING_CARGO)
         else:
@@ -533,10 +543,11 @@ def confirm_choice(question, details):
             return True
         elif choice == 'N':
             return False
-        
+
         
 def create_player():
-    """Main function"""
+    """Provides a series of questions which create the Player
+    object and then calls the scenario."""
     name_correct = False
     ship_name_correct = False
     cargo_items_correct = False
