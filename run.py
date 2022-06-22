@@ -515,7 +515,6 @@ class Player:
         """Uses a cargo item and removes
         it from the ship's cargo."""
         self.cargo.remove(self.cargo[int(cargo_item)-1]) 
-        # Need checking for this function
 
     def take_chance(self, factor):
         """Takes a factor and returns a True or
