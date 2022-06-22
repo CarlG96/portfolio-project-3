@@ -27,7 +27,7 @@ def validate_start_menu_option():
             return number
 
 
-def start_menu():
+def main():
     """Gives the player the options of playing the game,
     reading the instructions for how the game is
     played or quitting the game.
@@ -36,7 +36,7 @@ def start_menu():
         option = validate_start_menu_option()
 
         if option == '1':
-            return
+            introduction()
         elif option == '2':
             instructions()
         elif option == '3':
@@ -67,6 +67,7 @@ def introduction():
     print('You will face many perils on your way there, but the Star Republic '
           'is relying on you!')
     print('\n')
+    create_player()
 
 
 def validate_initial_cargo_choices(potential_cargo):
@@ -534,10 +535,8 @@ def confirm_choice(question, details):
             return False
         
         
-def main():
+def create_player():
     """Main function"""
-    start_menu()
-    introduction()
     name_correct = False
     ship_name_correct = False
     cargo_items_correct = False
