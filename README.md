@@ -71,6 +71,10 @@ There are many features I could think to add to the game in order to make it bet
 * More Methods and Cargo
     * I had considered making the player object creation more complex and the cargo could have been individual objects each with weights and methods and the player class could have had more methods that could have been called in scenarios but it would have only added to the complexity of the application and with only a terminal and no visual aspect may have been needlessly confusing for the player.
 ## Prototype and Flowcharts
+* Lucidchart
+
+<img src="README-pictures/lucidchart.png">
+
 ## Technology
 * Python
     * Used to create application with and display to terminal.
