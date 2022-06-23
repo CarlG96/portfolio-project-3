@@ -414,7 +414,7 @@ def scenario_intro(number, player_object):
               'a supermassive\nblack hole!\n'
               'What do you do?\n')
     elif number == 3:
-        print('\n\nAbout halfway through Sector C.\nA garbled alien '
+        print('\n\nAbout halfway through Sector C\na garbled alien '
               'transmission comes through from a spaceship on your radar.\n'
               'You have no idea what they want, but their heat signatures\n'
               'suggest they are powering up their weapons.\nWhat do you do?\n')
