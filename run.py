@@ -295,7 +295,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
                   'passes the destroyed blockade and hyperspace jumps '
                   'to Sector E.')
         elif conclusion_number == 4:
-            print(f'Thinking quickly, Captain {player_object.name} activates '
+            print(f'Thinking quickly, Captain {player_object.name} activates\n'
                   'the Cloaking Device in the cargo hold.\n'
                   f'Suddenly, {player_object.ship_name} '
                   'becomes invisible to the naked '
