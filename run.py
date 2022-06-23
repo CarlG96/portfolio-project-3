@@ -223,9 +223,9 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
                   'Sector C.')
         elif conclusion_number == 5:
             print(f'Captain {player_object.name} fails to stop '
-                  f'{player_object.ship_name} from being pulled into the '
+                  f'{player_object.ship_name} from\nbeing pulled into the '
                   'black hole.\nAs they pass the event horizon, '
-                  f'{player_object.name} notices time start to slow and\n'
+                  f'{player_object.name} notices\ntime start to slow and\n'
                   'gravity begin to get continually heavier and heavier...')
     elif scenario == 3:
         if conclusion_number == 1:
