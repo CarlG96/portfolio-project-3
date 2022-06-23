@@ -196,7 +196,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
                   f'Captain {player_object.name} burns some of the additional '
                   'fuel to make sure they aren\'t\npulled into the black '
                   'hole\'s event horizon.\nBreathing a sigh of relief, '
-                  f'Captain {player_object.name} makes the hyperspace jump to '
+                  f'Captain {player_object.name} makes\nthe hyperspace jump to '
                   'Sector C.')
         elif conclusion_number == 2:
             raise IndexError('This shouldn\'t be possible in the first '
