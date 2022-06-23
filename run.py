@@ -303,7 +303,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
                   'moves the ship carefully past the blockade\nand '
                   'hyperspace jumps to Sector E when out of their range.')
         elif conclusion_number == 5:
-            print('A barrage of homing missiles fly towards '
+            print('A barrage of homing missiles/nfly towards '
                   f'{player_object.ship_name}.\n{player_object.name}\'s pilot '
                   'skills are no match for the missiles\'s\n'
                   'ability to turn on a whim,\n'
