@@ -122,8 +122,8 @@ def get_name(name_in_question):
     while True:
         name = ((input(f'\nWhat is your {name_in_question}, captain?\n'))
                 .strip()).capitalize()
-        if len(name) > 15 or len(name) < 4 or not(name.isalnum()):
-            print(f'{name_in_question.capitalize()} must be between 4 and 15 '
+        if len(name) > 10 or len(name) < 4 or not(name.isalnum()):
+            print(f'{name_in_question.capitalize()} must be between 4 and 10 '
                   'alphanumeric characters without spaces.')
         else:
             if name_in_question == 'ship name':
