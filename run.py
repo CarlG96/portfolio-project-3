@@ -64,8 +64,8 @@ def introduction():
     print('You have been tasked with delivering a superweapon from Sector A '
           'to Sector E.')
     print('This will allow the Star Republic to defeat the Robo-Empire.')
-    print('You will face many perils on your way there, but the Star Republic '
-          'is relying on you!')
+    print('You will face many perils on your way there, but the Star Republic'
+          '\nis relying on you!')
     print('\n')
     create_player()
 
