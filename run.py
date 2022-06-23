@@ -183,7 +183,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
             print('\n')
             print(f'Captain {player_object.name} activates the Temporary Force'
                   ' Shield they took in the cargo.\nA kinetic barrier '
-                  f'envelops {player_object.ship_name}, allowing it to '
+                  f'envelops {player_object.ship_name}, allowing it to\n'
                   'safely traverse the asteroid storm.\nFeeling rather lucky; '
                   f'Captain {player_object.name} makes the hyperspace jump to '
                   'Sector B.')
@@ -450,7 +450,7 @@ def scenario_intro(number, player_object):
 def move_on():
     """Function that pauses the game, waits for 
     any input then continues when that input is delivered."""
-    input('\nPress any button to continue.\n')
+    input('\nPress enter to continue.\n')
     return
 
 
