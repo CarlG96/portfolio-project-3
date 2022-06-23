@@ -292,7 +292,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
                   'the missiles to '
                   'destroy the blockade itself!\nCaptain '
                   f'{player_object.name} '
-                  'passes the destroyed blockade and hyperspace jumps '
+                  'passes the destroyed blockade\nand hyperspace jumps '
                   'to Sector E.')
         elif conclusion_number == 4:
             print(f'Thinking quickly, Captain {player_object.name} activates\n'
