@@ -47,11 +47,11 @@ def instructions():
     """Gives the player instructions on how
     to play the game. Returns nothing."""
     print('\nIn Star Traveller, you must choose the name of your\n'
-          'captain, the name of your ship and choose a collection of useful '
+          'captain, the name of your ship and choose a collection\nof useful '
           'items to hold in your cargo.\nYou will then have to navigate a '
           'series of scenarios, choosing to burn precious fuel,\nuse up your '
           'item collection or take increasingly dangerous risks to progress. '
-          '\nIf you fail a scenario, you will get a game over.\nThe game is '
+          '\nIf you fail a scenario,\nyou will get a game over.\nThe game is '
           'played by inputting numbers or letters or strings of text when '
           'prompted by the text on screen.')
 
