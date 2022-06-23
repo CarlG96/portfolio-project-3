@@ -534,7 +534,7 @@ def confirm_choice(question, details):
     either True or False to break each while loop in the main 
     function."""
     while True:
-        choice = input(f'\nYour {question}: {details}.\nIs this correct? '
+        choice = input(f'\nYour {question}:\n{details}.\nIs this correct? '
                        'Type Y for yes and N for no:\n').upper()
         if choice not in ['Y', 'N']:
             print('Sorry, that choice is not available.')
