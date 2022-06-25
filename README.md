@@ -120,10 +120,22 @@ In this section, I discuss and explain what output should be displayed if the pl
 
 * Cargo Choice Incorrect Input
     * Input: The player does not input a valid integer for the list of cargo items that are presented to them, between 1 and n (n being the amount of items left to choose from).
-    * Output: The console displays the words: "Please choose options between 1 and n."
+    * Output: The console displays the words: "Please choose options between 1 and n." and gives the player a chance to retype their choice.
     * Input: The player inputs something other than an integer for their choice of cargo.
-    * Output: The console displays the words: "Please type your option as an available number."
+    * Output: The console displays the words: "Please type your option as an available number." and gives the player a chance to retype their choice.
 <img src="README-pictures/cargo-choice-incorrect-input.png">
+
+* Scenario Choice Incorrect Input
+    * Input: The player does not input a valid integer for the list of options that are presented to them, between 1 and n (n being the number of options left to choose from).
+    * Output: The console displays the words: "Please choose options between 1 and n." and gives the player a chance to retype their choice.
+    * Input: The player inputs something other than an integer for their choice of cargo.
+    * Output: The console displays the words: "Please type your option as an available number." and gives the player a chance to retype their choice.
+<img src="README-pictures/scenario-choice-incorrect-input.png">
+
+* Replay Game Incorrect Input
+    * Input: The player does not type in 'y' or 'Y' for yes or 'n' or 'N' for no when asked if they want to replay the game.
+    * Output: The console displays the words: "Type Y for yes or N for no." and gives the player a chance to retype their choice.
+<img src="README-pictures/replay-choice-incorrect-input.png">
 
 ## Bugs
 

@@ -94,7 +94,7 @@ def validate_replay_choice():
     while True:
         replay_choice = input('Type Y for yes and N for no:\n').upper()
         if replay_choice not in ['Y', 'N']:
-            print('Sorry, that choice is not available.')
+            print('\nSorry, that choice is not available.')
         else:
             return replay_choice
 
