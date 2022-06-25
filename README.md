@@ -102,6 +102,29 @@ The Player class model also has class methods which are used in the game. The fi
     This includes testing for index errors and value errors and making sure exception handling is done well, and that each available
     option is available when the game offers it.
 ## Test Cases
+In this section, I discuss and explain what output should be displayed if the player gives an incorrect input 
+* Start Menu Incorrect Input
+    * Input: The player types and enters an input that is not '1', '2', or '3'.
+    * Ouput: The console displays the words: "Invalid choice option. Please input a number between 1 and 3.", and then allows the player another go at input.
+<img src="README-pictures/start-screen-incorrect-input.png">
+
+* Name and Ship Name Incorrect Input
+    * Input: The player does not input a name as a string that is between 4 and 10 characters that are all alphanumeric and that does not have any spaces in.
+    * Output: The console displays the words: "Name must be between 4 and 10 alphanumeric characters without spaces." and allows the player to try again.
+<img src ="README-pictures/name-input-incorrect.png">
+
+* Is this Correct? Incorrect Input
+    * Input: After inputting a valid name, ship name or cargo list the game will ask the player to confirm their choice. The player does not type in 'Y' or 'y' for yes or 'N' or 'n' for no.
+    * Output: The console displays the words: "Sorry, that choice is not available.", and allows them to retry inputting a correct value.
+<img src="README-pictures/confirm-choice-incorrect.png">
+
+* Cargo Choice Incorrect Input
+    * Input: The player does not input a valid integer for the list of cargo items that are presented to them, between 1 and n (n being the amount of items left to choose from).
+    * Output: The console displays the words: "Please choose options between 1 and n."
+    * Input: The player inputs something other than an integer for their choice of cargo.
+    * Output: The console displays the words: "Please type your option as an available number."
+<img src="README-pictures/cargo-choice-incorrect-input.png">
+
 ## Bugs
 
 ## Deployment
