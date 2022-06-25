@@ -30,10 +30,10 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 -----
 Happy coding!
 
-# Space Traveller
+# Star Traveller
 
-## Purpose of Space Traveller
-Space Traveller is a text-based adventure game in a science fiction setting. The game receives input from the user and through this the user navigates through a number of scenarios, either passing them and moving on to the next one or failing. There are five scenarios the player must navigate through by inputting commands and completing all five of them will result in the user completing the game. The user will choose the name of their captain, their spaceship and will decide upon 3 of 5 'cargo' to hold on their ship to potentially use throughout the game.
+## Purpose of Star Traveller
+Star Traveller is a text-based adventure game in a science fiction setting. The game receives input from the user and through this the user navigates through a number of scenarios, either passing them and moving on to the next one or failing. There are five scenarios the player must navigate through by inputting commands and completing all five of them will result in the user completing the game. The user will choose the name of their captain, their spaceship and will decide upon 3 of 5 'cargo' to hold on their ship to potentially use throughout the game.
 ## Features
 * Start Menu
     * The player is taken to a start menu to begin with. Here they are prompted to choose between numbers 1-3 with details next to the numbers. 
@@ -103,5 +103,25 @@ The Player class model also has class methods which are used in the game. The fi
     option is available when the game offers it.
 ## Test Cases
 ## Bugs
+
 ## Deployment
+Gitpod
+The site was initially developed and tested in the terminal of Gitpod. Here are the steps I took to test the application in Gitpod:
+* Type "python3 run.py" into the terminal to start the application.
+* Input and enter text, numbers and strings when asked.
+* Press ctrl-c when wanting to exit the application.
+
+GitHub
+The repository for the code was stored on GitHub. This was linked to Heroku to create the site.
+
+Heroku
+The site was deployed to Heroku using the Code Institute's mock terminal for Heroku. Here is what I did to deploy my site to Heroku:
+* Clicked on "Create new app" on Heroku account and named app and selected region as 'Europe'.
+* Added PORT : 8000 to config vars in Settings.
+* Added heroku/python and heroku/nodejs buildpacks in Settings (in that order).
+* Connected GitHub repository for Star Traveller.
+* Manually deployed main branch for Star Traveller.
+* Then switched to automatic deployment of main branch after confirming manual deployment had worked.
+
 ## Credits
+Code Institute for the deployment terminal.
