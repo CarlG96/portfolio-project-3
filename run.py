@@ -303,7 +303,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
                   'moves the ship carefully past the blockade\nand '
                   'hyperspace jumps to Sector E when out of their range.')
         elif conclusion_number == 5:
-            print('A barrage of homing missiles/nfly towards '
+            print('A barrage of homing missiles\nfly towards '
                   f'{player_object.ship_name}.\n{player_object.name}\'s pilot '
                   'skills are no match for the missiles\'s\n'
                   'ability to turn on a whim,\n'
@@ -345,8 +345,8 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
                   'Mines from the cargo hold.\nThe mines are pulled into the '
                   'hold of the Robo-Annihilator,\ncausing the dreadnought '
                   'to explode in a mushroom cloud.'
-                  f'\n{player_object.ship_name} just escapes the destruction '
-                  'and after '
+                  f'\nThankfully, {player_object.ship_name} just escapes the '
+                  'destruction and after '
                   'delivering\nthe superweapon to the Star Republic Navy,\n'
                   f'Captain {player_object.name} became '
                   f'known as the hero \'{player_object.name} the Daring\'\n'
@@ -396,7 +396,8 @@ def display_options(player_object):
     for cargo_item in player_object.cargo:
         print(f'{i}) Use {cargo_item}.')
         i += 1
-    print(f'{i}) Burn fuel to escape situation. [Fuel = {player_object.fuel}]')
+    print(f'{i}) Burn fuel to escape the situation. [Fuel = '
+          f'{player_object.fuel}]')
     i += 1
     print(f'{i}) Perform a risky maneuver.')
 
