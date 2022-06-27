@@ -51,7 +51,24 @@ SCENARIO_DICTIONARY = {'1,1':
                        'system\nbut Captain {player_object.name}\'s quick '
                        'thinking has saved them.\nCaptain '
                        '{player_object.name} '
-                       'makes the hyperspace jump to Sector C.'}
+                       'makes the hyperspace jump to Sector C.',
+                       '2,4':
+                       'Captain {player_object.name} switches on the '
+                       'Anti-Gravity '
+                       'Device\nin {player_object.ship_name}\'s cargo.\nThis '
+                       'causes '
+                       '{player_object.ship_name} to be propelled away from '
+                       'the '
+                       'black hole\ninstead of towards it.\nCaptain '
+                       '{player_object.name} makes the hyperspace jump to '
+                       'Sector C.',
+                       '2,5':
+                       'Captain {player_object.name} fails to stop '
+                       '{player_object.ship_name} from\nbeing pulled into the '
+                       'black hole.\nAs they pass the event horizon, '
+                       '{player_object.name} notices\ntime start to slow and\n'
+                       'gravity begin to get continually heavier and '
+                       'heavier...'}
 
 
 def retrieve_scenario_text(player_object, scenario, conclusion_number):

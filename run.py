@@ -189,19 +189,9 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
         elif conclusion_number == 3:
             scenariodict.retrieve_scenario_text(player_object, 2, 3)
         elif conclusion_number == 4:
-            print(f'Captain {player_object.name} switches on the Anti-Gravity '
-                  f'Device\nin {player_object.ship_name}\'s cargo.\nThis '
-                  'causes '
-                  f'{player_object.ship_name} to be propelled away from the '
-                  'black hole\ninstead of towards it.\nCaptain '
-                  f'{player_object.name} makes the hyperspace jump to '
-                  'Sector C.')
+            scenariodict.retrieve_scenario_text(player_object, 2, 4)
         elif conclusion_number == 5:
-            print(f'Captain {player_object.name} fails to stop '
-                  f'{player_object.ship_name} from\nbeing pulled into the '
-                  'black hole.\nAs they pass the event horizon, '
-                  f'{player_object.name} notices\ntime start to slow and\n'
-                  'gravity begin to get continually heavier and heavier...')
+            scenariodict.retrieve_scenario_text(player_object, 2, 5)
     elif scenario == 3:
         if conclusion_number == 1:
             print(f'Captain {player_object.name} uses '
