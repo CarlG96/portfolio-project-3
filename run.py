@@ -194,134 +194,37 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
             scenariodict.retrieve_scenario_text(player_object, 2, 5)
     elif scenario == 3:
         if conclusion_number == 1:
-            print(f'Captain {player_object.name} uses '
-                  f'{player_object.ship_name}\'s fuel reserves,\nflying it '
-                  'out '
-                  'of range of the aliens\' antiquated weapon systems.\n'
-                  f'Captain {player_object.name} makes a safe hyperspace jump '
-                  'to Sector D.')
+            scenariodict.retrieve_scenario_text(player_object, 3, 1)
         elif conclusion_number == 2:
-            print(f'Captain {player_object.name} tries to use '
-                  f'{player_object.ship_name}\'s fuel reserves\nto fly out of '
-                  'range of the alien\' weapon systems,\nbut they find there '
-                  'is no more reserve.\n"If only I\'d taken more fuel" is '
-                  'the '
-                  f'last thought to pass\ninto {player_object.name}\'s head '
-                  f'before {player_object.ship_name} explodes.')
+            scenariodict.retrieve_scenario_text(player_object, 3, 2)
         elif conclusion_number == 3:
-            print(f'Captain {player_object.name} realises '
-                  f'{player_object.ship_name} is\nfar superior to the '
-                  'aliens\' '
-                  f'ships.\nCaptain {player_object.name} powers up '
-                  f'{player_object.ship_name}\'s weapon systems\nand fires '
-                  'before the aliens have a chance to power up their own,\n'
-                  f'destroying the aliens.\nCaptain {player_object.name} '
-                  'makes the hyperspace jump to Sector D.')
+            scenariodict.retrieve_scenario_text(player_object, 3, 3)
         elif conclusion_number == 4:
-            print('Turning on the Galactic Translator, Captain '
-                  f'{player_object.name} speaks with the aliens.\nIt turns '
-                  'out '
-                  'they are the Bug People from Sector X, and have mistaken\n'
-                  'you for an agent of the Robo-Empire.\nAfter clearing up '
-                  f'the misunderstanding, {player_object.name} makes a quick\n'
-                  'hyperspace jump to Sector D.')
+            scenariodict.retrieve_scenario_text(player_object, 3, 4)
         elif conclusion_number == 5:
-            print(f'Captain {player_object.name} attempts to answer the '
-                  'transmission in all\nthe space languages they know,\nbut '
-                  'no '
-                  'answer comes back.\nThe aliens power up their\nweapon '
-                  'systems and their turbo lasers destroy '
-                  f'{player_object.ship_name}.')
+            scenariodict.retrieve_scenario_text(player_object, 3, 5)
     elif scenario == 4:
         if conclusion_number == 1:
-            print(f'Just in time, Captain {player_object.name} uses the fuel '
-                  f'reserves to\nboost and hide {player_object.ship_name} '
-                  'behind a planet\'s rings,\nevading the blockade\'s '
-                  f'sensors.\nCaptain {player_object.name} waits for '
-                  'the blockade to move before making\nthe hyperspace '
-                  'jump to Sector E.')
+            scenariodict.retrieve_scenario_text(player_object, 4, 1)
         elif conclusion_number == 2:
-            print(f'Captain {player_object.name} attempts to move quickly to '
-                  'hide from the blockade\nbehind a planet\'s rings,\nbut '
-                  'just '
-                  'when they want to tap into the fuel reserves,\nthey '
-                  f'realise there are none left.\n{player_object.ship_name} '
-                  'drifts into view of the blockade after several minutes,\n'
-                  'and is destroyed by the incoming missiles.')
+            scenariodict.retrieve_scenario_text(player_object, 4, 2)
         elif conclusion_number == 3:
-            print(f'Captain {player_object.name} realises that they can\'t '
-                  'defeat the entire blockade by themselves,\nbut comes up  '
-                  'with a cunning plan.\nThey wait to be targetted by the ' 
-                  'blockade\'s missiles, only to fly\n'
-                  f'{player_object.ship_name} close to the blockade,\ncausing '
-                  'the missiles to '
-                  'destroy the blockade itself!\nCaptain '
-                  f'{player_object.name} '
-                  'passes the destroyed blockade\nand hyperspace jumps '
-                  'to Sector E.')
+            scenariodict.retrieve_scenario_text(player_object, 4, 3)
         elif conclusion_number == 4:
-            print(f'Thinking quickly, Captain {player_object.name} activates\n'
-                  'the Cloaking Device in the cargo hold.\n'
-                  f'Suddenly, {player_object.ship_name} '
-                  'becomes invisible to the naked '
-                  f'eye and to sensors.\nCaptain {player_object.name} '
-                  'moves the ship carefully past the blockade\nand '
-                  'hyperspace jumps to Sector E when out of their range.')
+            scenariodict.retrieve_scenario_text(player_object, 4, 4)
         elif conclusion_number == 5:
-            print('A barrage of homing missiles\nfly towards '
-                  f'{player_object.ship_name}.\n{player_object.name}\'s pilot '
-                  'skills are no match for the missiles\'s\n'
-                  'ability to turn on a whim,\n'
-                  f'and {player_object.ship_name} is destroyed in '
-                  'a massive explosion.')
+            scenariodict.retrieve_scenario_text(player_object, 4, 5)
     elif scenario == 5:
         if conclusion_number == 1:
-            print(f'Using the last of {player_object.ship_name}\'s fuel '
-                  f'reserve,\nCaptain {player_object.name} causes the force '
-                  'of '
-                  'the ship to overpower\nthe Robo-Annihilator\'s tractor '
-                  'beam;\nescaping from the Robo-Annihilator.\nCaptain '
-                  f'{player_object.name} delivers the superweapon to the Star '
-                  'Republic Navy,\nand after the war is '
-                  f'won becomes Admiral {player_object.name}.')
+            scenariodict.retrieve_scenario_text(player_object, 5, 1)
         elif conclusion_number == 2:
-            print(f'Captain {player_object.name} attempts to use the fuel '
-                  'reserve to escape the\ntractor beam\'s pull,\nbut '
-                  'realises '
-                  'there is no more reserve!\nThey are captured, '
-                  'the superweapon is lost,\nand so is the last hope of the '
-                  'Star Republic.')
+            scenariodict.retrieve_scenario_text(player_object, 5, 2)
         elif conclusion_number == 3:
-            print(f'Captain {player_object.name} allows themselves to be '
-                  'taken aboard the Robo-Annihilator.\nInside, they pull out '
-                  'a concealed '
-                  'laser pistol and kill the Robo-Guards,\nrunning through '
-                  'the ship before activating its self-destruct button.\n'
-                  f'Captain {player_object.name} '
-                  f'boards {player_object.ship_name} just in time to escape '
-                  'the\nexploding Robo-Annihilator.\nAfterwards, they '
-                  'deliver '
-                  'the superweapon to the Star Republic Navy,\nbecoming '
-                  f'Admiral {player_object.name} and winning the war against '
-                  'the Robo-Empire.')
+            scenariodict.retrieve_scenario_text(player_object, 5, 3)
         elif conclusion_number == 4:
-            print(f'As {player_object.ship_name} is pulled by the tractor '
-                  f'beam.\nCaptain {player_object.name} releases the Nuclear '
-                  'Mines from the cargo hold.\nThe mines are pulled into the '
-                  'hold of the Robo-Annihilator,\ncausing the dreadnought '
-                  'to explode in a mushroom cloud.'
-                  f'\nThankfully, {player_object.ship_name} just escapes the '
-                  'destruction and after '
-                  'delivering\nthe superweapon to the Star Republic Navy,\n'
-                  f'Captain {player_object.name} became '
-                  f'known as the hero \'{player_object.name} the Daring\'\n'
-                  'for their exploits in destroying the Robo-Annihilator.')
+            scenariodict.retrieve_scenario_text(player_object, 5, 4)
         elif conclusion_number == 5:
-            print(f'Captain {player_object.name} is imprisoned aboard the '
-                  'Robo-Annihilator.\nThe superweapon is taken and the last '
-                  f'thing {player_object.name} sees before they are executed\n'
-                  'is the capital world of the Star Republic being destroyed '
-                  'by the superweapon.')
+            scenariodict.retrieve_scenario_text(player_object, 5, 5)
     return
 
 
