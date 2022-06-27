@@ -82,6 +82,7 @@ The Player class model also has class methods which are used in the game. The fi
 * Lucidchart
 
 <img src="README-pictures/lucidchart.png">
+<img src="README-pictures/simple-flowchart.png">
 
 ## Technology
 * Python
