@@ -110,7 +110,7 @@ def validate_initial_cargo_choices(potential_cargo):
     Makes sure there are no value or index errors.
 
     Parameters:
-    potential_cargo (list of strings): List of items the player
+    potential_cargo (list of str): List of items the player
     can potentially still take.
 
     Returns:
@@ -131,9 +131,19 @@ def validate_initial_cargo_choices(potential_cargo):
 
 
 def validate_replay_choice():
-    """Validates whether the player has chosen either 'Y' or 'N'
-    for their choice in the replay function. Returns the player's
-    choice."""
+    """
+    Validates whether player wants to replay game.
+
+    Validates whether the player has chosen either 'Y' or 'N'
+    for their choice in the replay function. Creates
+    while loop so player must input correctly.
+
+    Parameters: No parameters.
+
+    Returns:
+    replay_choice(chr): 'Y' or 'N' so that player can
+    replay or quit game.
+    """
     while True:
         replay_choice = input('Type Y for yes and N for no:\n').upper()
         if replay_choice not in ['Y', 'N']:
@@ -143,9 +153,24 @@ def validate_replay_choice():
 
 
 def validate_scenario_choice(player_object):
-    """Validates the player's scenario choice.
-    Check's for Value or Index Error. Returns
-    integer for scenario choice."""
+    """
+    Validates the player's scenario choice.
+
+    Validates whether the player has inputted a
+    possible scenario choice that is available to them.
+    Creates while loop so that player must input
+    a valid choice.
+
+    Parameters:
+    player_object (Player): Used to work out the length of the
+    list of cargo items so that the player's input can be assessed
+    against the list of available inputs.
+
+    Returns:
+    number (int): Returned so that the game can decide where to proceed.
+    Whether the player has progressed to the next scenario, achieved victory
+    or recieved a game over and what text is associated with that.
+    """
     while True:
         try:
             number = int(input('\nPlease choose an option using the numbers '
@@ -160,8 +185,23 @@ def validate_scenario_choice(player_object):
 
 
 def get_name(name_in_question):
-    """Validates the user's name for captain or ship
-    depending on argument provided and returns the name."""
+    """
+    Asks the player to name something in their Player instance.
+
+    Asks the user's name for captain or ship
+    depending on argument provided and validates
+    whether that is correct by creating a while loop and checking
+    that the name is valid.
+
+    Parameters:
+    name_in_question (str): Either the name of the player's
+    captain or the spaceship's name.
+
+    Returns:
+    name (str): Returns a string which is used to develop the Player
+    instance. If the argument is the spaceship name then a 'the '
+    is added to the front of the string.
+    """
     while True:
         name = ((input(f'\nWhat is your {name_in_question}, captain?\n'))
                 .strip()).capitalize()
