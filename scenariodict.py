@@ -23,12 +23,12 @@ SCENARIO_DICTIONARY = {'1,1':
                        'lucky; '
                        'Captain {player_object.name} makes the hyperspace jump'
                        ' to Sector B.',
-                       '1.5':
+                       '1,5':
                        'One after another, asteroids crash into the side of '
                        '{player_object.ship_name}.\nThe hull is eventually '
                        'breached and Captain {player_object.name} is left\nto '
                        'the mercy of cold space.',
-                       '2.1':
+                       '2,1':
                        'Switching on {player_object.ship_name}\'s '
                        'afterburners,\n'
                        'Captain {player_object.name} burns some of the'
