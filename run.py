@@ -1,5 +1,8 @@
 import random
 
+WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 
+                 'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
+
 
 def quit_out():
     """Thank the player for playing and 
@@ -441,7 +444,7 @@ def move_on():
     return
 
 
-def scenario_call(player_object, scenario_number, risk_factor, WINNING_CARGO):
+def scenario_call(player_object, scenario_number, risk_factor):
     """Function for calling the first scenario 
     for the player. Also calls itself when a scenario is 
     completed successfully."""
@@ -453,7 +456,7 @@ def scenario_call(player_object, scenario_number, risk_factor, WINNING_CARGO):
             scenario_conclusion(player_object, scenario_number, 1)
             move_on()
             scenario_call(player_object, scenario_number + 1, risk_factor + 
-                          2, WINNING_CARGO) 
+                          2) 
         else:
             scenario_conclusion(player_object, scenario_number, 2)
             game_over(player_object)
@@ -462,7 +465,7 @@ def scenario_call(player_object, scenario_number, risk_factor, WINNING_CARGO):
             scenario_conclusion(player_object, scenario_number, 3)
             move_on()
             scenario_call(player_object, scenario_number + 1, risk_factor + 
-                          2, WINNING_CARGO) 
+                          2) 
         else:
             scenario_conclusion(player_object, scenario_number, 5)
             game_over(player_object)
@@ -473,7 +476,7 @@ def scenario_call(player_object, scenario_number, risk_factor, WINNING_CARGO):
             scenario_conclusion(player_object, scenario_number, 4)
             move_on()
             scenario_call(player_object, scenario_number + 1, risk_factor + 
-                          2, WINNING_CARGO)
+                          2)
         else:
             scenario_conclusion(player_object, scenario_number, 5)
             game_over(player_object)
@@ -551,9 +554,8 @@ def create_player():
                                              cargo_items)
     
     main_player = Player(player_name, player_ship_name, cargo_items)
-    WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 
-                     'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
-    scenario_call(main_player, int(1), int(1), WINNING_CARGO)
+
+    scenario_call(main_player, int(1), int(1))
     
 
 main()
