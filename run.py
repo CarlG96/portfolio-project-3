@@ -1,4 +1,6 @@
 import random
+from scenariodict import retrieve_scenario_text
+
 
 WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 
                  'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
@@ -166,10 +168,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
     print('\n')
     if scenario == 1:
         if conclusion_number == 1:
-            print(f'{player_object.name} uses extra fuel to accelerate '
-                  f'{player_object.ship_name} out of the way\nbefore the '
-                  f'asteroid storm hits.\n{player_object.name} makes the '
-                  'hyperspace jump to Sector B.')
+            retrieve_scenario_text(player_object, 1, 1)            
         elif conclusion_number == 2:
             raise IndexError('This shouldn\'t be possible in the first '
                              'scenario as the player\'s fuel can\'t decrease '
