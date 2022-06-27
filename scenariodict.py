@@ -215,7 +215,7 @@ SCENARIO_DICTIONARY = {'1,1':
                        'Captain {player_object.name} is imprisoned aboard the '
                        'Robo-Annihilator.\nThe superweapon is taken and the '
                        'last '
-                       'thing {player_object.name} sees before they are '
+                       'thing {player_object.name}\nsees before they are '
                        'executed\n'
                        'is the capital world of the Star Republic being '
                        'destroyed by the superweapon.'}
