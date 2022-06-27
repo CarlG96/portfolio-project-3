@@ -140,8 +140,8 @@ def decide_on_items():
                              'Galactic Translator', 'Cloaking Device', 
                              'Nuclear Mines']
     cargo = []
-    j = 1
-    while j < 4:
+    counter = 1
+    while counter < 4:
         print('\nHere are the list of items you can still take:\n')
         for potential_cargo_item, i in zip(potential_cargo_items, 
                                            range(len(potential_cargo_items))):
@@ -149,7 +149,7 @@ def decide_on_items():
         cargo_choice = validate_initial_cargo_choices(potential_cargo_items) 
         cargo.append(potential_cargo_items[cargo_choice])
         potential_cargo_items.remove(potential_cargo_items[cargo_choice])
-        j += 1
+        counter += 1
 
     return cargo
 
@@ -392,14 +392,14 @@ def display_options(player_object):
     """Function which is called and displays options to the player based on 
     their current cargo. Also displays class methods that the player
     can call upon."""
-    i = 1
+    counter = 1
     for cargo_item in player_object.cargo:
-        print(f'{i}) Use {cargo_item}.')
-        i += 1
-    print(f'{i}) Burn fuel to escape the situation. [Fuel = '
+        print(f'{counter}) Use {cargo_item}.')
+        counter += 1
+    print(f'{counter}) Burn fuel to escape the situation. [Fuel = '
           f'{player_object.fuel}]')
-    i += 1
-    print(f'{i}) Perform a risky maneuver.')
+    counter += 1
+    print(f'{counter}) Perform a risky maneuver.')
 
 
 def scenario_intro(number, player_object):
@@ -482,7 +482,7 @@ def scenario_call(player_object, scenario_number, risk_factor, WINNING_CARGO):
 class Player:
     """Creates an instance of the player 
     from what the player has inputted as name,
-    ship name and cargp"""
+    ship name and cargo."""
     def __init__(self, name, ship_name, cargo):
         self.name = name
         self.ship_name = ship_name
