@@ -72,22 +72,51 @@ def main():
 
 
 def instructions():
-    """Gives the player instructions on how
-    to play the game. Returns nothing."""
+    """
+    Gives the player instructions on how to play the game.
+
+    Parameters: No parameters.
+    Returns: No return values. Just prints strings.
+    """
     print(scenariodict.OTHER_DICT['instruct'])
 
 
 def introduction():
-    """Introduces the user to the game if
-    they have chosen to play"""
+    """
+    Introduction to the game.
+
+    Introduces the user to the game if
+    they have chosen to play and then sends the
+    player to create their own Player instance.
+
+    Parameters: No parameters.
+
+    Returns: No return values. Just prints strings
+    and then calls function for player to get started on creating
+    their own Player instance.
+    """
     print(scenariodict.OTHER_DICT['intro'])
     create_player()
 
 
 def validate_initial_cargo_choices(potential_cargo):
-    """Validates the initial cargo choices.
+    """
+    Validates the initial cargo choices.
+
+    Asks the player to input a number and checks and
+    validates if that number for the cargo is available.
+    If not it creates a while loop where the player is
+    asked to provide a valid number.
     Makes sure there are no value or index errors.
-    Returns choice as a number."""
+
+    Parameters:
+    potential_cargo (list of strings): List of items the player
+    can potentially still take.
+
+    Returns:
+    number (int): Integer which is used to index the potential
+    cargo items list outside the function.
+    """
     while True:
         try:
             number = int(input('\nChoose which item you want by typing in the '
