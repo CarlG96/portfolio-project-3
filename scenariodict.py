@@ -197,7 +197,7 @@ SCENARIO_DICTIONARY = {'1,1':
                        'against the Robo-Empire.',
                        '5,4':
                        'As {player_object.ship_name} is pulled by the tractor '
-                       'beam.\nCaptain {player_object.name} releases the '
+                       'beam,\nCaptain {player_object.name} releases the '
                        'Nuclear '
                        'Mines from the cargo hold.\nThe mines are pulled into '
                        'the '
