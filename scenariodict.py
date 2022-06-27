@@ -27,7 +27,17 @@ SCENARIO_DICTIONARY = {'1,1':
                        'One after another, asteroids crash into the side of '
                        '{player_object.ship_name}.\nThe hull is eventually '
                        'breached and Captain {player_object.name} is left\nto '
-                       'the mercy of cold space.'}
+                       'the mercy of cold space.',
+                       '2.1':
+                       'Switching on {player_object.ship_name}\'s '
+                       'afterburners,\n'
+                       'Captain {player_object.name} burns some of the'
+                       'additional'
+                       '\nfuel to make sure they aren\'t\npulled into the '
+                       'black '
+                       'hole\'s event horizon.\nBreathing a sigh of relief, '
+                       'Captain\n{player_object.name} makes\nthe hyperspace '
+                       'jump to Sector C.'}
 
 
 def retrieve_scenario_text(player_object, scenario, conclusion_number):
