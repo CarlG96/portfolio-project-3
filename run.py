@@ -187,16 +187,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
                              'scenario as the player\'s fuel can\'t decrease '
                              'this lowin the second scenario.')
         elif conclusion_number == 3:
-            print(f'Captain {player_object.name} directs '
-                  f'{player_object.ship_name} on a course\nso that it will '
-                  'approach the black hole\'s orbit at a '
-                  'tangent,\ncatapulting '
-                  'the ship out of the black hole\'s gravity well.\n'
-                  'With extreme speed, '
-                  f'{player_object.ship_name} is launched across the solar '
-                  f'system\nbut Captain {player_object.name}\'s quick '
-                  f'thinking has saved them.\nCaptain {player_object.name} '
-                  'makes the hyperspace jump to Sector C.')
+            scenariodict.retrieve_scenario_text(player_object, 2, 3)
         elif conclusion_number == 4:
             print(f'Captain {player_object.name} switches on the Anti-Gravity '
                   f'Device\nin {player_object.ship_name}\'s cargo.\nThis '
