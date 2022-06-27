@@ -178,10 +178,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
         elif conclusion_number == 4:
             scenariodict.retrieve_scenario_text(player_object, 1, 4)
         elif conclusion_number == 5:
-            print('One after another, asteroids crash into the side of '
-                  f'{player_object.ship_name}.\nThe hull is eventually '
-                  f'breached and Captain {player_object.name} is left\nto the '
-                  'mercy of cold space.')
+            scenariodict.retrieve_scenario_text(player_object, 1, 5)
     elif scenario == 2:
         if conclusion_number == 1:
             print(f'Switching on {player_object.ship_name}\'s afterburners,\n'
