@@ -176,12 +176,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
         elif conclusion_number == 3:
             scenariodict.retrieve_scenario_text(player_object, 1, 3)
         elif conclusion_number == 4:
-            print(f'Captain {player_object.name} activates the Temporary Force'
-                  ' Shield they took in the cargo.\nA kinetic barrier '
-                  f'envelops {player_object.ship_name}, allowing it to\n'
-                  'safely traverse the asteroid storm.\nFeeling rather lucky; '
-                  f'Captain {player_object.name} makes the hyperspace jump to '
-                  'Sector B.')
+            scenariodict.retrieve_scenario_text(player_object, 1, 4)
         elif conclusion_number == 5:
             print('One after another, asteroids crash into the side of '
                   f'{player_object.ship_name}.\nThe hull is eventually '
