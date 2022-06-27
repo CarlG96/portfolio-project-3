@@ -253,6 +253,30 @@ INTRO_DICTIONARY = {'1':
                     'tractor beam.\nWhat do you do?\n'}
 
 
+OTHER_DICT = {'instruct':
+              '\nIn Star Traveller, you must choose the name of your\n'
+              'captain, the name of your ship and choose a collection\nof '
+              'useful '
+              'items to hold in your cargo.\nYou will then have to navigate a '
+              'series of scenarios,\nchoosing to burn precious fuel,\nuse up '
+              'your '
+              'item collection or take increasingly dangerous risks to '
+              'progress.'
+              '\nIf you fail a scenario,\nyou will get a game over.\nThe game '
+              'is '
+              'played by inputting numbers or letters or\nstrings of text '
+              'when prompted by the text on screen.',
+              'intro':
+              '\n\nWelcome to Star Traveller!\n'
+              'You are a captain of the Star Republic Navy.\n'
+              'You have been tasked with delivering a superweapon\nfrom '
+              'Sector A to Sector E.\n'
+              'This will allow the Star Republic to defeat the Robo-Empire.\n'
+              'You will face many perils on your way there, but the Star '
+              'Republic\nis relying on you!'
+              '\n'}
+
+
 def retrieve_scenario_text(player_object, scenario, conclusion_number):
     """Input text to be changed."""
     key = str(scenario) + ',' + str(conclusion_number)

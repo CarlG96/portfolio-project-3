@@ -51,27 +51,13 @@ def main():
 def instructions():
     """Gives the player instructions on how
     to play the game. Returns nothing."""
-    print('\nIn Star Traveller, you must choose the name of your\n'
-          'captain, the name of your ship and choose a collection\nof useful '
-          'items to hold in your cargo.\nYou will then have to navigate a '
-          'series of scenarios,\nchoosing to burn precious fuel,\nuse up your '
-          'item collection or take increasingly dangerous risks to progress. '
-          '\nIf you fail a scenario,\nyou will get a game over.\nThe game is '
-          'played by inputting numbers or letters or\nstrings of text when '
-          'prompted by the text on screen.')
+    print(scenariodict.OTHER_DICT['instruct'])
 
 
 def introduction():
     """Introduces the user to the game if 
     they have chosen to play"""
-    print('\n\nWelcome to Star Traveller!')
-    print('You are a captain of the Star Republic Navy.')
-    print('You have been tasked with delivering a superweapon from Sector A '
-          'to Sector E.')
-    print('This will allow the Star Republic to defeat the Robo-Empire.')
-    print('You will face many perils on your way there, but the Star Republic'
-          '\nis relying on you!')
-    print('\n')
+    print(scenariodict.OTHER_DICT['intro'])
     create_player()
 
 
