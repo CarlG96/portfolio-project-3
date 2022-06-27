@@ -7,17 +7,34 @@ WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device',
 
 
 def quit_out():
-    """Thank the player for playing and
-    then quits the application"""
+    """
+    Quits application.
+
+    Thank the player for playing and
+    then quits the application.
+
+    Parameters: No parameters.
+
+    Returns: No return values.
+    """
     print('\nThanks for playing Star Traveller!')
     quit()
 
 
 def validate_start_menu_option():
-    """Validates whether the player wants to
+    """
+    Validates player choice at start menu.
+
+    Asks the player what they want to do
+    at the start menu and then
+    validates whether the player wants to
     play Star Traveller, see the instructions for
-    it or quit the game. Also validates the choice.
-    Returns number of the choice."""
+    playing or quit the game.
+
+    Parameters: No parameters.
+
+    Returns: String which represents a number of 1, 2 or 3.
+    """
     while True:
         print('\nWelcome to Star Traveller!\n')
         print('1) Play Star Traveller')
@@ -33,10 +50,16 @@ def validate_start_menu_option():
 
 
 def main():
-    """Gives the player the options of playing the game,
-    reading the instructions for how the game is
-    played or quitting the game. First function to be
-    called."""
+    """
+    Sends the player where they want to go.
+
+    Calls the start screen and receives the players
+    input then sends them where they want to go.
+
+    Parameters: No parameters.
+
+    Returns: No return values, but does call other functions.
+    """
     while True:
         option = validate_start_menu_option()
 
