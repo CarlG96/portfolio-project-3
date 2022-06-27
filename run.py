@@ -557,5 +557,6 @@ def create_player():
 
     scenario_call(main_player, int(1), int(1))
     
-
-main()
+    
+if __name__ == '__main__':
+    main()
