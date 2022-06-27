@@ -174,7 +174,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
                              'scenario as the player\'s fuel can\'t decrease '
                              'this low in the first scenario.')
         elif conclusion_number == 3:
-            scenariodict.retrieve_scenario_text(player_object, 1, 2)
+            scenariodict.retrieve_scenario_text(player_object, 1, 3)
         elif conclusion_number == 4:
             print(f'Captain {player_object.name} activates the Temporary Force'
                   ' Shield they took in the cargo.\nA kinetic barrier '
