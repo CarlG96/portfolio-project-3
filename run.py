@@ -1,5 +1,5 @@
 import random
-from scenariodict import retrieve_scenario_text
+import scenariodict 
 
 
 WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 
@@ -168,7 +168,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
     print('\n')
     if scenario == 1:
         if conclusion_number == 1:
-            retrieve_scenario_text(player_object, 1, 1)            
+            scenariodict.retrieve_scenario_text(player_object, 1, 1)            
         elif conclusion_number == 2:
             raise IndexError('This shouldn\'t be possible in the first '
                              'scenario as the player\'s fuel can\'t decrease '

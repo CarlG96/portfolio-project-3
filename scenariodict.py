@@ -4,7 +4,8 @@ SCENARIO_DICTIONARY = {'1,1':
                        '$player_object.ship_name out of the way\nbefore the '
                        'asteroid storm hits.\nCaptain $player_object.name '
                        'makes the '
-                       'hyperspace jump to Sector B.'}
+                       'hyperspace jump to Sector B.',
+                       }
 
 
 def retrieve_scenario_text(player_object, scenario, conclusion_number):
