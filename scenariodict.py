@@ -13,7 +13,16 @@ SCENARIO_DICTIONARY = {'1,1':
                        'skills to the limit.\nHaving survived this, '
                        'Captain {player_object.name} makes the hyperspace '
                        'jump to '
-                       'Sector B.'}
+                       'Sector B.',
+                       '1,4': 
+                       'Captain {player_object.name} activates the Temporary '
+                       'Force'
+                       ' Shield they took in the cargo.\nA kinetic barrier '
+                       'envelops {player_object.ship_name}, allowing it to\n'
+                       'safely traverse the asteroid storm.\nFeeling rather '
+                       'lucky; '
+                       'Captain {player_object.name} makes the hyperspace jump'
+                       ' to Sector B.'}
 
 
 def retrieve_scenario_text(player_object, scenario, conclusion_number):
