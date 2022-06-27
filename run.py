@@ -1,13 +1,13 @@
 import random
-import scenariodict 
+import scenariodict
 
 
-WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device', 
+WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device',
                  'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
 
 
 def quit_out():
-    """Thank the player for playing and 
+    """Thank the player for playing and
     then quits the application"""
     print('\nThanks for playing Star Traveller!')
     quit()
@@ -55,7 +55,7 @@ def instructions():
 
 
 def introduction():
-    """Introduces the user to the game if 
+    """Introduces the user to the game if
     they have chosen to play"""
     print(scenariodict.OTHER_DICT['intro'])
     create_player()
@@ -76,10 +76,10 @@ def validate_initial_cargo_choices(potential_cargo):
                 return number
         except ValueError:
             print('Please type your option as an available number.')
-        
+
 
 def validate_replay_choice():
-    """Validates whether the player has chosen either 'Y' or 'N' 
+    """Validates whether the player has chosen either 'Y' or 'N'
     for their choice in the replay function. Returns the player's
     choice."""
     while True:
@@ -113,7 +113,7 @@ def get_name(name_in_question):
     while True:
         name = ((input(f'\nWhat is your {name_in_question}, captain?\n'))
                 .strip()).capitalize()
-        if len(name) > 10 or len(name) < 4 or not(name.isalnum()):
+        if len(name) > 10 or len(name) < 4 or not name.isalnum():
             print(f'{name_in_question.capitalize()} must be between 4 and 10 '
                   'alphanumeric characters without spaces.')
         else:
@@ -123,21 +123,21 @@ def get_name(name_in_question):
 
 
 def decide_on_items():
-    """User chooses 3 of 5 items. Returns a list of these 
+    """User chooses 3 of 5 items. Returns a list of these
     three items."""
     print('\nOn your journey you will need to take some items for perilous '
           'situations.')
-    potential_cargo_items = ['Temporary Force Shield', 'Anti-Gravity Device', 
-                             'Galactic Translator', 'Cloaking Device', 
+    potential_cargo_items = ['Temporary Force Shield', 'Anti-Gravity Device',
+                             'Galactic Translator', 'Cloaking Device',
                              'Nuclear Mines']
     cargo = []
     counter = 1
     while counter < 4:
         print('\nHere are the list of items you can still take:\n')
-        for potential_cargo_item, i in zip(potential_cargo_items, 
+        for potential_cargo_item, i in zip(potential_cargo_items,
                                            range(len(potential_cargo_items))):
             print(f'{i + 1}) {potential_cargo_item}')
-        cargo_choice = validate_initial_cargo_choices(potential_cargo_items) 
+        cargo_choice = validate_initial_cargo_choices(potential_cargo_items)
         cargo.append(potential_cargo_items[cargo_choice])
         potential_cargo_items.remove(potential_cargo_items[cargo_choice])
         counter += 1
@@ -146,7 +146,7 @@ def decide_on_items():
 
 
 def scenario_conclusion(player_object, scenario, conclusion_number):
-    """Function which takes in argument for which 
+    """Function which takes in argument for which
     scenario is playing and how the player concluded it. Also takes
     in argument for player object.
     Prints flavour text to give the player some idea of what happened
@@ -154,7 +154,7 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
     print('\n')
     if scenario == 1:
         if conclusion_number == 1:
-            scenariodict.retrieve_scenario_text(player_object, 1, 1)            
+            scenariodict.retrieve_scenario_text(player_object, 1, 1)
         elif conclusion_number == 2:
             raise IndexError('This shouldn\'t be possible in the first '
                              'scenario as the player\'s fuel can\'t decrease '
@@ -215,10 +215,10 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
 
 
 def replay():
-    """Function which is called and asks the player whether they would like to 
+    """Function which is called and asks the player whether they would like to
     replay the game."""
     print('Would you like to play again?')
-    choice = validate_replay_choice()  
+    choice = validate_replay_choice()
     if choice == 'Y':
         main()
     elif choice == 'N':
@@ -235,15 +235,15 @@ def game_over(player_object):
 
 def victory(player_object):
     """Function which is called when the player wins the game.
-    Allows them to quit or play again by calling replay 
+    Allows them to quit or play again by calling replay
     function."""
     print(f'\n\nWell done Captain {player_object.name}. You have saved the '
           'Star Republic!')
     replay()
-   
+
 
 def display_options(player_object):
-    """Function which is called and displays options to the player based on 
+    """Function which is called and displays options to the player based on
     their current cargo. Also displays class methods that the player
     can call upon."""
     counter = 1
@@ -258,7 +258,7 @@ def display_options(player_object):
 
 def scenario_intro(number, player_object):
     """Function which decides on which scenario intro text
-    is provided to the player depending on how far along the game they 
+    is provided to the player depending on how far along the game they
     are. Moves to victory function if player has completed all scenarios."""
     if number == 1:
         print(scenariodict.INTRO_DICTIONARY['1'])
@@ -275,25 +275,25 @@ def scenario_intro(number, player_object):
 
 
 def move_on():
-    """Function that pauses the game, waits for 
+    """Function that pauses the game, waits for
     any input then continues when that input is delivered."""
     input('\nPress enter to continue.\n')
     return
 
 
 def scenario_call(player_object, scenario_number, risk_factor):
-    """Function for calling the first scenario 
-    for the player. Also calls itself when a scenario is 
+    """Function for calling the first scenario
+    for the player. Also calls itself when a scenario is
     completed successfully."""
     scenario_intro(int(scenario_number), player_object)
     display_options(player_object)
-    number_choice = validate_scenario_choice(player_object) 
+    number_choice = validate_scenario_choice(player_object)
     if number_choice == len(player_object.cargo) + 1:
         if player_object.use_fuel():
             scenario_conclusion(player_object, scenario_number, 1)
             move_on()
-            scenario_call(player_object, scenario_number + 1, risk_factor + 
-                          2) 
+            scenario_call(player_object, scenario_number + 1, risk_factor +
+                          2)
         else:
             scenario_conclusion(player_object, scenario_number, 2)
             game_over(player_object)
@@ -301,8 +301,8 @@ def scenario_call(player_object, scenario_number, risk_factor):
         if player_object.take_chance(risk_factor):
             scenario_conclusion(player_object, scenario_number, 3)
             move_on()
-            scenario_call(player_object, scenario_number + 1, risk_factor + 
-                          2) 
+            scenario_call(player_object, scenario_number + 1, risk_factor +
+                          2)
         else:
             scenario_conclusion(player_object, scenario_number, 5)
             game_over(player_object)
@@ -312,15 +312,15 @@ def scenario_call(player_object, scenario_number, risk_factor):
             player_object.cargo.remove(WINNING_CARGO[int(scenario_number)-1])
             scenario_conclusion(player_object, scenario_number, 4)
             move_on()
-            scenario_call(player_object, scenario_number + 1, risk_factor + 
+            scenario_call(player_object, scenario_number + 1, risk_factor +
                           2)
         else:
             scenario_conclusion(player_object, scenario_number, 5)
             game_over(player_object)
-    
+
 
 class Player:
-    """Creates an instance of the player 
+    """Creates an instance of the player
     from what the player has inputted as name,
     ship name and cargo."""
     def __init__(self, name, ship_name, cargo):
@@ -330,18 +330,18 @@ class Player:
         self.fuel = 2
 
     def use_fuel(self):
-        """Removes one fuel from the 
+        """Removes one fuel from the
         ship in order to get past an objective."""
         self.fuel -= 1
         if self.fuel >= 0:
             return True
-        else: 
+        else:
             return False
 
     def use_cargo(self, cargo_item):
         """Uses a cargo item and removes
         it from the ship's cargo."""
-        self.cargo.remove(self.cargo[int(cargo_item)-1]) 
+        self.cargo.remove(self.cargo[int(cargo_item)-1])
 
     def take_chance(self, factor):
         """Takes a factor and returns a True or
@@ -358,7 +358,7 @@ def confirm_choice(question, details):
     """Function that asks the player if the specific detail
     (name, ship name or cargo items) are correct before creating
     the player object in the main function. This function returns
-    either True or False to break each while loop in the main 
+    either True or False to break each while loop in the main
     function."""
     while True:
         choice = input(f'\nYour {question}:\n{details}.\nIs this correct? '
@@ -370,7 +370,7 @@ def confirm_choice(question, details):
         elif choice == 'N':
             return False
 
-        
+
 def create_player():
     """Provides a series of questions which create the Player
     object and then calls the scenario."""
@@ -384,16 +384,16 @@ def create_player():
     while not ship_name_correct:
         player_ship_name = get_name("ship name")
         ship_name_correct = confirm_choice('Ship\'s name is', player_ship_name)
-    
+
     while not cargo_items_correct:
         cargo_items = decide_on_items()
         cargo_items_correct = confirm_choice('Cargo hold contains these items',
                                              cargo_items)
-    
+
     main_player = Player(player_name, player_ship_name, cargo_items)
 
     scenario_call(main_player, int(1), int(1))
-    
-    
+
+
 if __name__ == '__main__':
     main()

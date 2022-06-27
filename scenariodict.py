@@ -1,4 +1,4 @@
-SCENARIO_DICTIONARY = {'1,1':  
+SCENARIO_DICTIONARY = {'1,1':
                        'Captain {player_object.name} uses extra fuel to '
                        'accelerate '
                        '{player_object.ship_name} out of the way\nbefore the '
@@ -14,7 +14,7 @@ SCENARIO_DICTIONARY = {'1,1':
                        'Captain {player_object.name} makes the hyperspace '
                        'jump to '
                        'Sector B.',
-                       '1,4': 
+                       '1,4':
                        'Captain {player_object.name} activates the Temporary '
                        'Force'
                        ' Shield they took in the cargo.\nA kinetic barrier '
@@ -222,7 +222,7 @@ SCENARIO_DICTIONARY = {'1,1':
 
 
 INTRO_DICTIONARY = {'1':
-                    '\n\nAs you go to leave Sector A. A large asteroid storm ' 
+                    '\n\nAs you go to leave Sector A. A large asteroid storm '
                     'appears!\nYou are about to be caught in the middle of it.'
                     '\nWhat do you do?\n',
                     '2':
@@ -280,9 +280,9 @@ OTHER_DICT = {'instruct':
 def retrieve_scenario_text(player_object, scenario, conclusion_number):
     """Input text to be changed."""
     key = str(scenario) + ',' + str(conclusion_number)
-    scenario_text = SCENARIO_DICTIONARY[key].replace('{player_object.name}', 
+    scenario_text = SCENARIO_DICTIONARY[key].replace('{player_object.name}',
                                                      player_object.name)
-    scenario_text = scenario_text.replace('{player_object.ship_name}', 
+    scenario_text = scenario_text.replace('{player_object.ship_name}',
                                           player_object.ship_name)
     print(scenario_text)
     return
