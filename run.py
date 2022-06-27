@@ -275,29 +275,15 @@ def scenario_intro(number, player_object):
     is provided to the player depending on how far along the game they 
     are. Moves to victory function if player has completed all scenarios."""
     if number == 1:
-        print('\n\nAs you go to leave Sector A. A large asteroid storm ' 
-              'appears!\nYou are about to be caught in the middle of it.\n'
-              'What do you do?\n')
+        print(scenariodict.INTRO_DICTIONARY['1'])
     elif number == 2:
-        print('\n\nAs you enter Sector B, your ship starts to be pulled in by '
-              'a supermassive\nblack hole!\n'
-              'What do you do?\n')
+        print(scenariodict.INTRO_DICTIONARY['2'])
     elif number == 3:
-        print('\n\nAbout halfway through Sector C\na garbled alien '
-              'transmission comes through from a spaceship on your radar.\n'
-              'You have no idea what they want, but their heat signatures\n'
-              'suggest they are powering up their weapons.\nWhat do you do?\n')
+        print(scenariodict.INTRO_DICTIONARY['3'])
     elif number == 4:
-        print('\n\nAs you enter Sector D, you notice a blockade of '
-              'Robo-Empire ships.\nThere`s no way you could fight them all.\n'
-              'What do you do?\n')
+        print(scenariodict.INTRO_DICTIONARY['4'])
     elif number == 5:
-        print('\n\nUpon arrival in Sector E you see your destination appear '
-              'after\ntyping in your encrypted password.\nThe end '
-              'of your journey seems so close now.\n'
-              'But out of nowhere their capital ship, the Robo-Annihilator,\n'
-              'appears and starts to pull you in with its '
-              'tractor beam.\nWhat do you do?\n')
+        print(scenariodict.INTRO_DICTIONARY['5'])
     elif number == 6:
         victory(player_object)
 
