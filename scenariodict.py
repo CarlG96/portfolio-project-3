@@ -1,3 +1,9 @@
+"""
+Module which contains dictionaries of strings and one
+function to access and change dictionary items.
+"""
+
+# Dictionary containing strings for scenario conclusions.
 SCENARIO_DICTIONARY = {'1,1':
                        'Captain {player_object.name} uses extra fuel to '
                        'accelerate '
@@ -220,7 +226,7 @@ SCENARIO_DICTIONARY = {'1,1':
                        'is the capital world of the Star Republic being '
                        'destroyed by the superweapon.'}
 
-
+# Dictionary containing strings for scenario intros.
 INTRO_DICTIONARY = {'1':
                     '\n\nAs you go to leave Sector A. A large asteroid storm '
                     'appears!\nYou are about to be caught in the middle of it.'
@@ -252,7 +258,7 @@ INTRO_DICTIONARY = {'1':
                     'appears and starts to pull you in with its '
                     'tractor beam.\nWhat do you do?\n'}
 
-
+# Dictionary containing strings for intructions and game introductions.
 OTHER_DICT = {'instruct':
               '\nIn Star Traveller, you must choose the name of your\n'
               'captain, the name of your ship and choose a collection\nof '
@@ -278,7 +284,21 @@ OTHER_DICT = {'instruct':
 
 
 def retrieve_scenario_text(player_object, scenario, conclusion_number):
-    """Input text to be changed."""
+    """
+    Function builds key and prints retrieved dictionary text.
+
+    Takes scenario and conclusion numbers, builds key, retrieves
+    string and replaces with attributes from the Player instance.
+    Then prints string.
+
+    Parameters:
+    player_object (Player): Provides attributes to replace parts of the
+    string text.
+    scenario (int): Provides first part of key for dictionary.
+    conclusion_number (int): Provides second part of key for dictionary.
+
+    Returns: Returns nothing but does print string.
+    """
     key = str(scenario) + ',' + str(conclusion_number)
     scenario_text = SCENARIO_DICTIONARY[key].replace('{player_object.name}',
                                                      player_object.name)

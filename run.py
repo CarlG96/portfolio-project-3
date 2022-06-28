@@ -1,3 +1,7 @@
+"""
+Module which runs the game.
+"""
+
 # Imported for random integer generation
 import random
 # Imported to hold dictionaries of strings and one function to access them
@@ -386,9 +390,20 @@ def victory(player_object):
 
 
 def display_options(player_object):
-    """Function which is called and displays options to the player based on
-    their current cargo. Also displays class methods that the player
-    can call upon."""
+    """
+    Function which displays options for player in scenario.
+
+    Function which is called and displays options to the player based on
+    their current cargo. Also displays Player class methods that the player
+    can call upon.
+
+    Parameters:
+    player_object (Player): Used to display the
+    cargo list in the Player instance and to also display the
+    fuel attribute.
+
+    Returns: Returns nothing.
+    """
     counter = 1
     for cargo_item in player_object.cargo:
         print(f'{counter}) Use {cargo_item}.')
@@ -400,9 +415,21 @@ def display_options(player_object):
 
 
 def scenario_intro(number, player_object):
-    """Function which decides on which scenario intro text
+    """
+    Function which acts as 'switch' for scenario intros.
+    Function which decides on which scenario intro text
     is provided to the player depending on how far along the game they
-    are. Moves to victory function if player has completed all scenarios."""
+    are. Calls from dictionary.Moves to victory function if player
+    has completed all scenarios.
+
+    Parameters:
+    number (int): Integer used to decide which intro should
+    be called from dictionary.
+    player_object (Player): Used to be passed on to the
+    victory function if player has passed all scenarios.
+
+    Returns: Returns nothing.
+    """
     if number == 1:
         print(scenariodict.INTRO_DICTIONARY['1'])
     elif number == 2:
@@ -418,8 +445,15 @@ def scenario_intro(number, player_object):
 
 
 def move_on():
-    """Function that pauses the game, waits for
-    any input then continues when that input is delivered."""
+    """
+    Function that pauses the game.
+
+    Waits for any input then continues when that input is delivered.
+
+    Parameters: No parameters.
+
+    Returns: Returns nothing.
+    """
     input('\nPress enter to continue.\n')
     return
 
