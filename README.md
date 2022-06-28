@@ -1,5 +1,7 @@
 # Star Traveller
+<img src ="README-pictures/star-traveller-responsive.png">
 
+[Here is the live version of Star Traveller](https://star-traveller.herokuapp.com/)
 ## Purpose of Star Traveller
 Star Traveller is a text-based adventure game in a science fiction setting. The game receives input from the user and through this the user navigates through a number of scenarios, either passing them and moving on to the next one or failing. There are five scenarios the player must navigate through by inputting commands and completing all five of them will result in the user completing the game. The user will choose the name of their captain, their spaceship and will decide upon 3 of 5 'cargo' to hold on their ship to potentially use throughout the game.
 ## Features
@@ -47,10 +49,16 @@ In the game, after the player has decided to play the game at the start menu and
 The Player class model also has class methods which are used in the game. The first of these is the use_fuel method which reduces the fuel attribute by 1 and then returns either True or False. In game if True is returned then the scenario is cleared but if False is returned the player will fail the scenario and the game_over function will be called.  The second method of the Player class model is the take_chance method. This method takes an argument for the risk factor of a scenario (this is a factor that starts at 1 in the first scenario and increases by 2 each scenario until it reaches 9 in the final scenario) and generates a random integer from 1 to 10. If the randomly generated integer is larger than or equal to the risk factor then True will be returned and the player will pass the scenario but if it is less than the risk factor False will be returned and the player will fail the scenario.
 
 ## Prototype and Flowcharts
-* Lucidchart
+
+### Pseudocode flowchart
+* Here is a flowchart showing how the game functions with pseudocode.
+
+<img src="README-pictures/simple-flowchart.png">
+
+### Function Flowchart
+* Here is a flowchart showing how the game functions with specific reference to functions in use.
 
 <img src="README-pictures/lucidchart.png">
-<img src="README-pictures/simple-flowchart.png">
 
 ## Technology
 * Python
@@ -63,35 +71,41 @@ The Player class model also has class methods which are used in the game. The fi
     * Used for development of the application.
 * Heroku
     * Used for the deployment of the application.
+
 ## Testing
 * PEP8 Validator
     * This application has been run through a PEP8 validator at [pep8online](http://pep8online.com/)
 * Bug checking
-    * This application has been tested to ensure that all possible scenarios are possible and that there are no obvious bugs.
+    * This application has been tested to ensure that all possible scenarios are achievable and that there are no obvious bugs.
     This includes testing for index errors and value errors and making sure exception handling is done well, and that each available
     option is available when the game offers it.
+
 ## Test Cases
 In this section, I discuss and explain what output should be displayed if the player gives an incorrect input 
 * Start Menu Incorrect Input
     * Input: The player types and enters an input that is not '1', '2', or '3'.
     * Ouput: The console displays the words: "Invalid choice option. Please input a number between 1 and 3.", and then allows the player another go at input.
+
 <img src="README-pictures/start-screen-incorrect-input.png">
 
 * Name and Ship Name Incorrect Input
     * Input: The player does not input a name as a string that is between 4 and 10 characters that are all alphanumeric and that does not have any spaces in.
     * Output: The console displays the words: "Name must be between 4 and 10 alphanumeric characters without spaces." and allows the player to try again.
+
 <img src ="README-pictures/name-input-incorrect.png">
 
 * Is this Correct? Incorrect Input
     * Input: After inputting a valid name, ship name or cargo list the game will ask the player to confirm their choice. The player does not type in 'Y' or 'y' for yes or 'N' or 'n' for no.
     * Output: The console displays the words: "Sorry, that choice is not available.", and allows them to retry inputting a correct value.
-<img src="README-pictures/confirm-choice-incorrect.png">
+
+<img src="README-pictures/confirm-choice-incorrect-input.png">
 
 * Cargo Choice Incorrect Input
     * Input: The player does not input a valid integer for the list of cargo items that are presented to them, between 1 and n (n being the amount of items left to choose from).
     * Output: The console displays the words: "Please choose options between 1 and n." and gives the player a chance to retype their choice.
     * Input: The player inputs something other than an integer for their choice of cargo.
     * Output: The console displays the words: "Please type your option as an available number." and gives the player a chance to retype their choice.
+
 <img src="README-pictures/cargo-choice-incorrect-input.png">
 
 * Scenario Choice Incorrect Input
@@ -99,26 +113,43 @@ In this section, I discuss and explain what output should be displayed if the pl
     * Output: The console displays the words: "Please choose options between 1 and n." and gives the player a chance to retype their choice.
     * Input: The player inputs something other than an integer for their choice of cargo.
     * Output: The console displays the words: "Please type your option as an available number." and gives the player a chance to retype their choice.
+
 <img src="README-pictures/scenario-choice-incorrect-input.png">
 
 * Replay Game Incorrect Input
     * Input: The player does not type in 'y' or 'Y' for yes or 'n' or 'N' for no when asked if they want to replay the game.
     * Output: The console displays the words: "Type Y for yes or N for no." and gives the player a chance to retype their choice.
+
 <img src="README-pictures/replay-choice-incorrect-input.png">
 
 ## Bugs
+Here is a list of the more significant bugs I encountered when building this project:
+* Use of Python range() function incorrectly
+    * Bug: In some functions (such as the validate_scenario_choice function) at first I used the range() function incorrectly as I had not understood that the second argument I provided was what the range would go up to instead of stopping on. So where there might be 4 options available typing 4 would be classed as invalid as it was outside the range I had coded.
+    * Fix: This fix was simple and involved increasing the second argument for the range() function by 1.
+
+* Creating unusable keys for SCENARIO_DICTIONARY
+    * Bug: I accidentally set some of the keys in the SCENARIO_DICTIONARY to have a decimal point in them instead of a comma. This meant when the key was created in the retrieve_scenario_text function with a comma the key would not correspond with any of the key-value pairs and caused an error.
+    * Fix: Changed the keys to have commas instead of decimal places.
+
+* Incorrect grammar in text
+    * Bug: The class attribute for the spaceship's name has a lowercase 'the ' at the start of it by design. However when replacing the start of sentences in strings of text in the scenario conclusions this made it look weird as this remained lowercase. For example, a sentence would read 'the Spaceship dodges' instead of 'The Spaceship dodges'.
+    * Fix: Changed the grammar of the sentences so the lowercase still made sense, although using the capitalize() method probably would have worked just as well.
+
+## Unfixed Bugs
+To my knowledge there are no unfixed bugs in Star Traveller.
 
 ## Deployment
-Gitpod
+### Gitpod
 The site was initially developed and tested in the terminal of Gitpod. Here are the steps I took to test the application in Gitpod:
 * Type "python3 run.py" into the terminal to start the application.
 * Input and enter text, numbers and strings when asked.
 * Press ctrl-c when wanting to exit the application.
 
-GitHub
+### GitHub
 The repository for the code was stored on GitHub. This was linked to Heroku to create the site.
 
-Heroku
+### Heroku
 The site was deployed to Heroku using the Code Institute's mock terminal for Heroku. Here is what I did to deploy my site to Heroku:
 * Clicked on "Create new app" on Heroku account and named app and selected region as 'Europe'.
 * Added PORT : 8000 to config vars in Settings.
@@ -128,4 +159,8 @@ The site was deployed to Heroku using the Code Institute's mock terminal for Her
 * Then switched to automatic deployment of main branch after confirming manual deployment had worked.
 
 ## Credits
-Code Institute for the deployment terminal.
+* Code Institute for the deployment terminal.
+* [Heroku](https://www.heroku.com/) for the deployed project.
+* [pep8online](http://pep8online.com/) for the PEP8 validator.
+* [Am I Responsive?](https://ui.dev/amiresponsive) for the image at the top of this README.
+* [Lucidchart](https://www.lucidchart.com/pages/) for the flowcharts I created.
