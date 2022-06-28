@@ -1,35 +1,3 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome CarlG96,
-
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
-
 # Star Traveller
 
 ## Purpose of Star Traveller
@@ -37,22 +5,22 @@ Star Traveller is a text-based adventure game in a science fiction setting. The 
 ## Features
 * Start Menu
     * The player is taken to a start menu to begin with. Here they are prompted to choose between numbers 1-3 with details next to the numbers. 
-    If the player inputs 1 they are taken to the introduction text of the game and then to create their player object.
-    If the player inputs 2 they are taken to the instructions text and then back to the start menu.
-    If the player inputs 3 they exit the application.
-    If they input an invalid repsonse they are asked to input a valid response.
+    * If the player inputs 1 they are taken to the introduction text of the game and then to create their player object.
+    * If the player inputs 2 they are taken to the instructions text and then back to the start menu.
+    * If the player inputs 3 they exit the application.
+    * If they input an invalid repsonse they are asked to input a valid response.
 
 * Create Player
     * The player is asked to name their captain and their ship. The names must be between 4 and 15 alphanumeric characters without spaces and if they aren't the player is prompted to do this.
-    * They are asked if these names are correct and if not this happens again in a loop but if so moves on to the player choosing what cargo they want. The player confirms there choice by responding by inputting 'Y' or 'N'. 
+    * They are asked if these names are correct and if not this happens again in a loop but if so moves on to the player choosing what cargo they want. The player confirms their choice by responding by inputting 'Y' or 'N'. 
     * They are then asked to choose from five pieces of cargo with number inputs. The cargo list shrinks when taken from and choosing a non integer causes the game to ask the player to type an available number and typing an out of index number causes the game to tell the player what number range is available.
-    * The player is asked if the cargo is good when they have selected three pieces and if they aren't the process starts again but if they are the player object is created using the captain name, ship name and the cargo chosen. The player object also has two methods which allow it to use fuel and take a chance in a scenario and another method which removes cargo once used in the game.
+    * The player is asked if the cargo is good when they have selected three pieces and if the player decides they aren't the process starts again but if they are the player object is created using the captain name, ship name and the cargo chosen. The player object also has two methods which allow it to use fuel and take a chance in a scenario.  
 
 * Scenario 
     * The player is then taken to the scenario where they are given an introductory message and are given the options of what they can do in available numbers. 
     * Choosing an incorrect option will ask the player to type an integer if they create an index error or will give the range of integers available if the player's input is outside of index bounds.
     * Other than using available cargo items, the player can burn fuel (starts at 2 and decreases after every use) and take a risk with the two class methods of the player class.
-    * Using the correct cargo item for the scenario clears the scenario but using the wrong one will fail it. It will also remove the cargo item from the player's options using a method.
+    * Using the correct cargo item for the scenario clears the scenario but using the wrong one will fail it. It will also remove the cargo item from the player's options.
     * Burning fuel automatically passes the scenario but if fuel is 0 or below will fail the scenario. Burning fuel also reduces fuel amount by 1 each time.
     * Taking a chance returns a random integer between 1 and 10. If the player scores higher than the scenario's 'risk factor' then they succeed otherwise they fail. Each scenario increases the risk factor by 2; so scenario 1 is a 1 and always winnable but scenario 5 is a 9 and very risky for the player.
     * Succeeding in a scenario takes you to the next scenario or victory if all scenarios are complete but failing takes you to the game over.
@@ -69,14 +37,14 @@ There are many features I could think to add to the game in order to make it bet
 * Leaderboard on Google Sheet
     * I had thought about storing victorious player objects on an external Google Sheet linked via API. This would also allow me to use a function to display a leaderboard which would present things like Captain Name and Ship Name of those that had completed the game. This function would get data from the Google Sheet and display it on the terminal.
 * More Methods and Cargo
-    * I had considered making the player object creation more complex and the cargo could have been individual objects each with weights and methods and the player class could have had more methods that could have been called in scenarios but it would have only added to the complexity of the application and with only a terminal and no visual aspect may have been needlessly confusing for the player.
+    * I had considered making the player object creation more complex and the cargo could have been individual objects each with weights and methods and the player class could have had more methods that could have been called in scenarios but it would have only added to the complexity of the application and with only a terminal and no visual aspect may have been needlessly confusing for the player. I could have also composed the Player class of multiple other classes. For example I could have made the Player class be made up of a Captain class, a Ship class, a Cargo class etc.
 
 ## Data Model
 I created the Player class to act as my data model. 
 
 In the game, after the player has decided to play the game at the start menu and has gone through the introductory text, they start to answer questions which create variables which are used to create an instance of the Player class. They provide a name for the name class attribute, which acts as the name for the 'captain of the ship' in the game. They provide a name for the ship_name class attribute, which acts as a 'spaceship name' in the game. Finally, they pick three items from a list of 5 called potential_cargo_items which is then used to create a list of items as a class attribute called cargo which represents a theoretical inventory of cargo in the spaceship that the player can use. The Player class model also has one attribute which is not affected by player input during creation which is the fuel attribute which is set to 2 initially.
 
-The Player class model also has class methods which are used in the game. The first of these is the use_fuel method which reduces the fuel attribute by 1 and then returns either True or False. In game if True is returned then the scenario is cleared but if False is returned the player will fail the scenario and the game_over function will be called. The second method is the use_cargo method whhakalkajclkjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkich receives an argument as a number for the cargo item that the player has decided to use in that scenario. The method removes the cargo item from the cargo list in the Player class model and therefore prevents the player reusing a cargo item in a following scenario. The last method of the Player class model is the take_chance method. This method takes an argument for the risk factor of a scenario (this is a factor that starts at 1 in the first scenario and increases by 2 each scenario until it reaches 9 in the final scenario) and generates a random integer from 1 to 10. If the randomly generated integer is larger than or equal to the risk factor then True will be returned and the player will pass the scenario but if it is less than the risk factor False will be returned and the player will fail the scenario.
+The Player class model also has class methods which are used in the game. The first of these is the use_fuel method which reduces the fuel attribute by 1 and then returns either True or False. In game if True is returned then the scenario is cleared but if False is returned the player will fail the scenario and the game_over function will be called.  The second method of the Player class model is the take_chance method. This method takes an argument for the risk factor of a scenario (this is a factor that starts at 1 in the first scenario and increases by 2 each scenario until it reaches 9 in the final scenario) and generates a random integer from 1 to 10. If the randomly generated integer is larger than or equal to the risk factor then True will be returned and the player will pass the scenario but if it is less than the risk factor False will be returned and the player will fail the scenario.
 
 ## Prototype and Flowcharts
 * Lucidchart
