@@ -1,7 +1,9 @@
+# Imported for random integer generation
 import random
+# Imported to hold dictionaries of strings and one function to access them
 import scenariodict
 
-
+# Global constant list of winning cargo items in order
 WINNING_CARGO = ['Temporary Force Shield', 'Anti-Gravity Device',
                  'Galactic Translator', 'Cloaking Device', 'Nuclear Mines']
 
@@ -215,8 +217,19 @@ def get_name(name_in_question):
 
 
 def decide_on_items():
-    """User chooses 3 of 5 items. Returns a list of these
-    three items."""
+    """
+    Asks the player to choose three items out of potential 5.
+
+    Asks player to choose items and presents a shrinking list
+    as they pick more. Appends a new list that is used for the
+    Player instance.
+
+    Parameters: No parameters.
+
+    Returns:
+    cargo (list of str): Returns cargo list which is used to
+    instantiate the Player instance for the game.
+    """
     print('\nOn your journey you will need to take some items for perilous '
           'situations.')
     potential_cargo_items = ['Temporary Force Shield', 'Anti-Gravity Device',
@@ -238,11 +251,19 @@ def decide_on_items():
 
 
 def scenario_conclusion(player_object, scenario, conclusion_number):
-    """Function which takes in argument for which
-    scenario is playing and how the player concluded it. Also takes
-    in argument for player object.
-    Prints flavour text to give the player some idea of what happened
-    as a result of that scenario."""
+    """
+    Function which acts as 'switch' to retrieve conclusion text.
+
+    Parameters:
+    player_object (Player): Instance of Player class
+    created by player at start of game.
+    scenario (int): Integer to identify which scenario is taking
+    place currently in the game.
+    conclusion_number (int): Integer to identify which conclusion
+    has happened based on game logic.
+
+    Returns: Returns nothing.
+    """
     print('\n')
     if scenario == 1:
         if conclusion_number == 1:
@@ -307,8 +328,18 @@ def scenario_conclusion(player_object, scenario, conclusion_number):
 
 
 def replay():
-    """Function which is called and asks the player whether they would like to
-    replay the game."""
+    """
+    Function which acts as 'switch' for replaying the game.
+
+    This function calls the validation function for
+    the player's replay choice and then calls a function to
+    go to the start menu or quit the game (and terminal)
+    entirely.
+
+    Parameters: No parameters.
+
+    Returns: Returns nothing.
+    """
     print('Would you like to play again?')
     choice = validate_replay_choice()
     if choice == 'Y':
@@ -318,17 +349,37 @@ def replay():
 
 
 def game_over(player_object):
-    """Function which is called when the player loses the
-    game. Allows them to quit or play again by calling
-    replay function."""
+    """
+    Function which is called when the player loses the game.
+
+    Prints game over text and allows them to
+    quit or play again by calling
+    replay function.
+
+    Parameters:
+    player_object (Player): Uses this to print an fstring
+    with the name of the captain inside.
+
+    Returns: Returns nothing.
+    """
     print(f'\n\nCaptain {player_object.name} has died.')
     replay()
 
 
 def victory(player_object):
-    """Function which is called when the player wins the game.
-    Allows them to quit or play again by calling replay
-    function."""
+    """
+    Function which is called when the player wins the game.
+
+    Prints victory text and allows them to
+    quit or play again by calling
+    replay function.
+
+    Parameters:
+    player_object (Player): Uses this to print an fstring
+    with the name of the captain inside.
+
+    Returns: Returns nothing.
+    """
     print(f'\n\nWell done Captain {player_object.name}. You have saved the '
           'Star Republic!')
     replay()
