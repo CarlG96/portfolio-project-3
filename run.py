@@ -459,9 +459,26 @@ def move_on():
 
 
 def scenario_call(player_object, scenario_number, risk_factor):
-    """Function for calling the first scenario
-    for the player. Also calls itself when a scenario is
-    completed successfully."""
+    """Function for calling a scenario for the player.
+
+    Calls itself when a scenario is
+    completed successfully or calls game over.
+    Does this by validating players scenario choice
+    and checking it against things in the Player
+    instance.
+
+    Parameters:
+    player_object (Player): Used to pass on to
+    other functions and to call class methods to see if they
+    return True or False.
+    scenario_number (int): Used to call other functions and
+    decide which scenario is being referred to.
+    risk_factor (int): Factor used to be increased when passed
+    into next scenario and to test against take_chance method
+    in Player instance.
+
+    Returns: Returns nothing.
+    """
     scenario_intro(int(scenario_number), player_object)
     display_options(player_object)
     number_choice = validate_scenario_choice(player_object)
@@ -532,11 +549,23 @@ class Player:
 
 
 def confirm_choice(question, details):
-    """Function that asks the player if the specific detail
-    (name, ship name or cargo items) are correct before creating
-    the player object in the main function. This function returns
-    either True or False to break each while loop in the main
-    function."""
+    """
+    Function that asks the player if the specific detail is correct.
+
+    Before creating the Player instance in the main function. This function
+    returns either True or False to break each while loop in the create_player
+    function. Also validates player's answer.
+
+    Parameters:
+    question (str): Specific question the player must answer yes
+    or no to.
+    details (str or list of str): Either name, ship name or cargo
+    list player has chosen
+
+    Returns:
+    bool: Either True or False to break while loop in
+    create_player function.
+    """
     while True:
         choice = input(f'\nYour {question}:\n{details}.\nIs this correct? '
                        'Type Y for yes and N for no:\n').upper()
@@ -549,8 +578,15 @@ def confirm_choice(question, details):
 
 
 def create_player():
-    """Provides a series of questions which create the Player
-    object and then calls the scenario."""
+    """
+    Provides a series of questions which create the Player
+    instance and then calls the scenario.
+
+    Parameters: No parameters.
+
+    Returns: Returns nothing just creates Player instance and
+    calls scenario.
+    """
     name_correct = False
     ship_name_correct = False
     cargo_items_correct = False
