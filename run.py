@@ -558,9 +558,20 @@ class Player:
             return False
 
     def take_chance(self, factor):
-        """Takes a factor and returns a True or
-        False as to whether the ship survived the
-        risky maneuver taken."""
+        """
+        Decides whether player has survived risky action.
+
+        Generates random integer between 1 and 10 and
+        then checks against factor to decide outcome.
+
+        Parameters:
+        factor (int): Integer that increases throughout game.
+        Is checked against random integer to decide outcome.
+
+        Returns:
+        bool: True or False to decide if the
+        player has survived the scenario or not.
+        """
         num = random.randint(1, 10)
         if num >= factor:
             return True
