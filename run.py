@@ -514,28 +514,48 @@ def scenario_call(player_object, scenario_number, risk_factor):
 
 
 class Player:
-    """Creates an instance of the player
-    from what the player has inputted as name,
-    ship name and cargo."""
+    """
+    This is a class that holds data and has methods for the
+    player to navigate the game.
+
+    Attributes:
+    name (str): The name of the Captain.
+    ship_name (str): The name of the spaceship.
+    cargo (list of str): Holds cargo items.
+    fuel (int): Represents spaceship's fuel reserves.
+    """
     def __init__(self, name, ship_name, cargo):
+        """
+        The constructor for Player class.
+
+        Parameters:
+        name (str): The name of the Captain.
+        ship_name (str): The name of the spaceship.
+        cargo (list of str): Holds cargo items.
+        """
         self.name = name
         self.ship_name = ship_name
         self.cargo = cargo
         self.fuel = 2
 
     def use_fuel(self):
-        """Removes one fuel from the
-        ship in order to get past an objective."""
+        """
+        Function to remove 1 fuel and
+        check if player has run out.
+
+        Parameters: No parameters.
+
+        Returns:
+        bool: Returns True or False depending on
+        whether fuel is greater than or equal to 0.
+        This is used to decide whether a player fails or
+        passes a scenario.
+        """
         self.fuel -= 1
         if self.fuel >= 0:
             return True
         else:
             return False
-
-    def use_cargo(self, cargo_item):
-        """Uses a cargo item and removes
-        it from the ship's cargo."""
-        self.cargo.remove(self.cargo[int(cargo_item)-1])
 
     def take_chance(self, factor):
         """Takes a factor and returns a True or
